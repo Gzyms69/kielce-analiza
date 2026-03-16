@@ -1,0 +1,13 @@
+.venv/
+data/
+__pycache__/
+.ipynb_checkpoints/
+*.zip
+*.gml
+*.gpkg
+*.dbf
+*.shp
+*.shx
+*.prj
+.DS_Store
+.env

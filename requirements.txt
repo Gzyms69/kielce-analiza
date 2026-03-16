@@ -1,0 +1,11 @@
+pandas
+geopandas
+shapely
+fiona
+pyproj
+jupyter
+matplotlib
+gtfs-kit
+openpyxl
+rtree
+pyogrio
