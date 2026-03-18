@@ -1,0 +1,526 @@
+ULTIMATE NATIONAL DATA AUDIT & COORDINATE VERIFICATION 2026
+PROJECT STANDARD CRS: EPSG:2180 (Poland 1992)
+------------------------------------------------------------
+
+CITY: BIALYSTOK
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 1689
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 4175
+  - Price Stats (tran_cena_brutto): Med=449000, Min=2000, Max=25584001
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [757928.44940749 561466.69253453 811111.83346822 608454.53776251]
+
+CITY: BYDGOSZCZ
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 1185
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 2522
+  - Price Stats (tran_cena_brutto): Med=245000, Min=399, Max=2353400
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [419421.87263455 565454.83452042 455266.3257766  606919.20226771]
+
+CITY: CZESTOCHOWA
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 891
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 2225
+  - Price Stats (tran_cena_brutto): Med=344360, Min=1, Max=13471442
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [497306.52590241 318504.17387119 520375.66729989 335120.47318968]
+
+CITY: ELBLAG
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 363
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 1159
+  - Price Stats (tran_cena_brutto): Med=324000, Min=1000, Max=5319750
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [522725.84288392 696115.62135516 537946.1220899  709174.07807997]
+
+CITY: ELK
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 313
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 1383
+  - Price Stats (tran_cena_brutto): Med=280000, Min=1, Max=5386002
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [707780.81282541 657740.40511858 729252.62855317 680019.77528404]
+
+CITY: GIZYCKO
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 139
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['tran_cena_brutto', 'dok_data', 'easting', 'northing', 'm2', 'lok_pow_uzyt', 'geometry']
+  - Total (2025+): 394
+  - Price Stats (tran_cena_brutto): Med=320000, Min=1, Max=4120272
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [669401.01552914 684902.88803395 691202.36853973 695620.01413055]
+
+CITY: GORZOW
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 428
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 2335
+  - Price Stats (tran_cena_brutto): Med=323000, Min=1103, Max=4457701
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [233097.82263997 541981.47021316 251824.17529346 551429.45549833]
+
+CITY: GZM
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 8941
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 27412
+  - Price Stats (tran_cena_brutto): Med=290000, Min=1, Max=253500000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [453559.15478654 222520.89441529 533874.54473462 301401.11360862]
+
+CITY: KIELCE
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 1341
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 3316
+  - Price Stats (tran_cena_brutto): Med=394236, Min=6150, Max=49827352
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [595535.77564278 314186.92006533 633496.7358013  348435.00081186]
+
+CITY: KRAKOW
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 4141
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 20045
+  - Price Stats (tran_cena_brutto): Med=645127, Min=200, Max=20593871
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [541818.26255473 226413.17900454 596745.77586732 264799.40289943]
+
+CITY: KUTNO
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 220
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 437
+  - Price Stats (tran_cena_brutto): Med=294000, Min=9840, Max=2147752
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [520356.81267215 481247.87341005 530312.3081526  488594.54908166]
+
+CITY: LEGNICA
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 357
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 3171
+  - Price Stats (tran_cena_brutto): Med=303000, Min=1120, Max=5414715972
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [298210.73663803 364102.59851498 316380.67020547 387522.85276703]
+
+CITY: LESZNO
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 281
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 1476
+  - Price Stats (tran_cena_brutto): Med=335000, Min=123, Max=6302787
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [327469.37438693 434891.03780182 339347.66903981 457001.05803722]
+
+CITY: LODZ
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 2584
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['easting', 'northing', 'tran_cena_brutto', 'lok_pow_uzyt', 'dok_data', 'geometry']
+  - Total (2025+): 12000
+  - Price Stats (tran_cena_brutto): Med=380815, Min=450, Max=48954000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [-1653710.09226722 -5300000.           552717.39967346   449503.58842732]
+
+CITY: LOMZA
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 177
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 693
+  - Price Stats (tran_cena_brutto): Med=365568, Min=100, Max=1211916
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [702558.70240624 591245.30551987 707199.58863198 598557.99397063]
+
+CITY: LUBLIN
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 1294
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 6180
+  - Price Stats (tran_cena_brutto): Med=496580, Min=0, Max=13899000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [733812.89677228 364884.11013334 763808.76896219 398184.02343469]
+
+CITY: OLSZTYN
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 2715
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 8511
+  - Price Stats (tran_cena_brutto): Med=350000, Min=1, Max=11193000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [552367.06555105 624338.07251742 721160.38454557 702124.55125114]
+
+CITY: OPOLE
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 530
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 1660
+  - Price Stats (tran_cena_brutto): Med=455000, Min=555, Max=4551000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [412495.09728003 302005.52942701 430342.22751758 323395.55536644]
+
+CITY: POZNAN
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 5085
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 20383
+  - Price Stats (tran_cena_brutto): Med=479000, Min=0, Max=18450004
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [286546.59116432 435998.9930097  396784.36596819 535768.17221203]
+
+CITY: PRZEMYSL
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 307
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 693
+  - Price Stats (tran_cena_brutto): Med=318000, Min=5000, Max=3656773
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [763824.58480481 210753.07115884 777232.80756695 226319.45591448]
+
+CITY: RADOM
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 712
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 1255
+  - Price Stats (tran_cena_brutto): Med=320000, Min=6000, Max=6986400
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [641633.33154743 385018.33816724 661747.50955943 402384.72005023]
+
+CITY: RZESZOW
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 2600
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 5842
+  - Price Stats (tran_cena_brutto): Med=457049, Min=200, Max=51531660614
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [693248.7574619  217225.9453986  754329.57308369 281108.33981516]
+
+CITY: SUWALKI
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 331
+[RCN] Status: OK
+  - CRS: EPSG:2179
+  - Columns: ['tran_cena_brutto', 'dok_data', 'lok_pow_uzyt', 'geometry']
+  - Total (2025+): 1096
+  - Price Stats (tran_cena_brutto): Med=340000, Min=529, Max=10300000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [749798.27420864 690961.03168294 765017.07416075 706677.6879529 ]
+
+CITY: SWINOUJSCIE
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 207
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 1705
+  - Price Stats (tran_cena_brutto): Med=645750, Min=740, Max=3016409081
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [185819.48636655 675439.79162506 201769.78615946 683627.89157809]
+
+CITY: SZCZECIN
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 1765
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 4425
+  - Price Stats (tran_cena_brutto): Med=390000, Min=459, Max=16247333
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [189453.21226453 611665.00955737 233574.22915423 651327.86618802]
+
+CITY: TORUN
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 899
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 4248
+  - Price Stats (tran_cena_brutto): Med=420000, Min=100, Max=7265231
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [455142.28359364 562331.23799119 494819.39255415 581961.52260664]
+
+CITY: TROJMIASTO
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 3191
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 25722
+  - Price Stats (tran_cena_brutto): Med=595000, Min=0, Max=57501010
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [441735.32184335 704643.10075766 495722.24446736 753319.9544967 ]
+
+CITY: WARSZAWA
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 10099
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 43048
+  - Price Stats (tran_cena_brutto): Med=689401, Min=0, Max=108039141
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [581519.08789282 452548.52732656 676952.32283992 520300.66117015]
+
+CITY: WROCLAW
+========================================
+[STOPS] Status: OK
+  - CRS: EPSG:4326
+  - Columns: ['stop_id', 'stop_name', 'stop_lat', 'stop_lon', 'source', 'city', 'geometry']
+  - Total Count: 3148
+[RCN] Status: OK
+  - CRS: EPSG:2180
+  - Columns: ['gml_id', 'serwis_rcn', 'teryt', 'tran_przestrzen_nazw', 'tran_lokalny_id_iip', 'tran_wersja_id', 'tran_rodzaj_trans', 'tran_rodzaj_rynku', 'tran_sprzedajacy', 'tran_kupujacy', 'tran_cena_brutto', 'tran_vat', 'dok_data', 'nier_rodzaj', 'nier_prawo', 'nier_udzial', 'nier_pow_gruntu', 'nier_cena_brutto', 'nier_vat', 'lok_id_lokalu', 'lok_nr_lokalu', 'lok_funkcja', 'lok_liczba_izb', 'lok_nr_kond', 'lok_pow_uzyt', 'lok_pow_przyn', 'lok_cena_brutto', 'lok_vat', 'lok_adres', 'geometry']
+  - Total (2025+): 14594
+  - Price Stats (tran_cena_brutto): Med=543443, Min=1, Max=65190000
+[OSM] Status: OK
+  - CRS: EPSG:4326
+  - Layers: Found osm_full.gpkg
+[POPULATION] Status: OK
+  - National Grid CRS: EPSG:3035
+  - City Bounds (2180): [322694.65025473 315083.52409615 401793.18582175 393365.44984647]
+
