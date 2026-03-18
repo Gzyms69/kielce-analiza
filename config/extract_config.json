@@ -1,0 +1,294 @@
+{
+  "extracts": [
+    {
+      "output": "data/cities/bialystok/osm_bbox.pbf",
+      "description": "bialystok",
+      "bbox": [
+        22.84772845756544,
+        52.822207094814864,
+        23.64627070142518,
+        53.29171661348796
+      ]
+    },
+    {
+      "output": "data/cities/bydgoszcz/osm_bbox.pbf",
+      "description": "bydgoszcz",
+      "bbox": [
+        17.772998348757355,
+        52.93764790030573,
+        18.354051508254482,
+        53.337339852168455
+      ]
+    },
+    {
+      "output": "data/cities/czestochowa/osm_bbox.pbf",
+      "description": "czestochowa",
+      "bbox": [
+        18.940596047471352,
+        50.719986579383324,
+        19.310725972880356,
+        50.89628114916409
+      ]
+    },
+    {
+      "output": "data/cities/elblag/osm_bbox.pbf",
+      "description": "elblag",
+      "bbox": [
+        19.325675437800264,
+        54.11500478734217,
+        19.605140049886955,
+        54.25938492191973
+      ]
+    },
+    {
+      "output": "data/cities/elk/osm_bbox.pbf",
+      "description": "elk",
+      "bbox": [
+        22.139601918574446,
+        53.72676608521321,
+        22.50862047359897,
+        53.95336765944287
+      ]
+    },
+    {
+      "output": "data/cities/gizycko/osm_bbox.pbf",
+      "description": "gizycko",
+      "bbox": [
+        21.567379225708315,
+        53.984445192132554,
+        21.94278676902025,
+        54.104994183931716
+      ]
+    },
+    {
+      "output": "data/cities/gorzow/osm_bbox.pbf",
+      "description": "gorzow",
+      "bbox": [
+        15.024227552290233,
+        52.67066495058673,
+        15.344925587283566,
+        52.7815554708026
+      ]
+    },
+    {
+      "output": "data/cities/gzm/osm_bbox.pbf",
+      "description": "gzm",
+      "bbox": [
+        18.32998766935406,
+        49.85591483798526,
+        19.4973832977596,
+        50.59254456337807
+      ]
+    },
+    {
+      "output": "data/cities/kielce/osm_bbox.pbf",
+      "description": "kielce",
+      "bbox": [
+        20.337924630643148,
+        50.67023808660113,
+        20.917665372871127,
+        51.00489156946052
+      ]
+    },
+    {
+      "output": "data/cities/krakow/osm_bbox.pbf",
+      "description": "krakow",
+      "bbox": [
+        19.562934339577488,
+        49.888996117282076,
+        20.3735775332571,
+        50.25876889000523
+      ]
+    },
+    {
+      "output": "data/cities/kutno/osm_bbox.pbf",
+      "description": "kutno",
+      "bbox": [
+        19.27633415915358,
+        52.1830803072839,
+        19.465834071820606,
+        52.27621145346226
+      ]
+    },
+    {
+      "output": "data/cities/legnica/osm_bbox.pbf",
+      "description": "legnica",
+      "bbox": [
+        16.087891781828663,
+        51.09761311140685,
+        16.390916306772734,
+        51.33772045579063
+      ]
+    },
+    {
+      "output": "data/cities/leszno/osm_bbox.pbf",
+      "description": "leszno",
+      "bbox": [
+        16.472195008009408,
+        51.74286237304054,
+        16.692055367817275,
+        51.968017515968775
+      ]
+    },
+    {
+      "output": "data/cities/lodz/osm_bbox.pbf",
+      "description": "lodz",
+      "bbox": [
+        -0.012682585070333074,
+        -0.012768641494051587,
+        19.786500656745755,
+        51.923799950785195
+      ]
+    },
+    {
+      "output": "data/cities/lomza/osm_bbox.pbf",
+      "description": "lomza",
+      "bbox": [
+        22.01035750808612,
+        53.134112157616755,
+        22.12644366504356,
+        53.22525688397203
+      ]
+    },
+    {
+      "output": "data/cities/lublin/osm_bbox.pbf",
+      "description": "lublin",
+      "bbox": [
+        22.329568919495248,
+        51.08244374274361,
+        22.80150722218526,
+        51.41221482029691
+      ]
+    },
+    {
+      "output": "data/cities/olsztyn/osm_bbox.pbf",
+      "description": "olsztyn",
+      "bbox": [
+        19.77559906226421,
+        53.458708909440546,
+        22.3841497037934,
+        54.19148315692351
+      ]
+    },
+    {
+      "output": "data/cities/opole/osm_bbox.pbf",
+      "description": "opole",
+      "bbox": [
+        17.74051390075822,
+        50.56616263451297,
+        18.035071817757924,
+        50.78533911648576
+      ]
+    },
+    {
+      "output": "data/cities/poznan/osm_bbox.pbf",
+      "description": "poznan",
+      "bbox": [
+        15.840341481256608,
+        51.75943939947381,
+        17.511137044833045,
+        52.665104444434554
+      ]
+    },
+    {
+      "output": "data/cities/przemysl/osm_bbox.pbf",
+      "description": "przemysl",
+      "bbox": [
+        22.647339141314756,
+        49.6874942379892,
+        22.86912701511731,
+        49.85738780485648
+      ]
+    },
+    {
+      "output": "data/cities/radom/osm_bbox.pbf",
+      "description": "radom",
+      "bbox": [
+        21.012746132175078,
+        51.29669832277675,
+        21.349039204248974,
+        51.48148204153105
+      ]
+    },
+    {
+      "output": "data/cities/rzeszow/osm_bbox.pbf",
+      "description": "rzeszow",
+      "bbox": [
+        21.674555063581035,
+        49.766445573320894,
+        22.588265307402143,
+        50.3686088315237
+      ]
+    },
+    {
+      "output": "data/cities/suwalki/osm_bbox.pbf",
+      "description": "suwalki",
+      "bbox": [
+        22.797713245176233,
+        54.00296698597903,
+        23.082412570664108,
+        54.175092351019046
+      ]
+    },
+    {
+      "output": "data/cities/swinoujscie/osm_bbox.pbf",
+      "description": "swinoujscie",
+      "bbox": [
+        14.193550393792242,
+        53.8377223834196,
+        14.478273909102331,
+        53.941990507795516
+      ]
+    },
+    {
+      "output": "data/cities/szczecin/osm_bbox.pbf",
+      "description": "szczecin",
+      "bbox": [
+        14.287187189441324,
+        53.26903533280646,
+        14.998022931883055,
+        53.66988594379765
+      ]
+    },
+    {
+      "output": "data/cities/torun/osm_bbox.pbf",
+      "description": "torun",
+      "bbox": [
+        18.30759467269212,
+        52.91282853455284,
+        18.945131280463226,
+        53.1162928533079
+      ]
+    },
+    {
+      "output": "data/cities/trojmiasto/osm_bbox.pbf",
+      "description": "trojmiasto",
+      "bbox": [
+        18.074758930721796,
+        54.19209175253908,
+        18.957157922348937,
+        54.65424903541714
+      ]
+    },
+    {
+      "output": "data/cities/warszawa/osm_bbox.pbf",
+      "description": "warszawa",
+      "bbox": [
+        20.170998129937686,
+        51.90841471322309,
+        21.61073544947621,
+        52.54060103278467
+      ]
+    },
+    {
+      "output": "data/cities/wroclaw/osm_bbox.pbf",
+      "description": "wroclaw",
+      "bbox": [
+        16.459584993268322,
+        50.66498927249111,
+        17.6143653293784,
+        51.4104867034399
+      ]
+    }
+  ]
+}

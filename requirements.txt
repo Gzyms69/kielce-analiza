@@ -9,3 +9,4 @@ gtfs-kit
 openpyxl
 rtree
 pyogrio
+requests
