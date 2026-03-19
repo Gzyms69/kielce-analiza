@@ -30,12 +30,12 @@ Status: 100% Complete - DATA HARDENED. Final stitching required for ZIP-based ci
 - **Task 1.3:** Consolidate all Hubs into a single `master_analytical.gpkg` with a unified schema.
 
 ## 4. Master Analytical Pipeline (Phase 2)
-### Step 1: Pre-computation of Stop Metrics (`compute_stop_dna.py`)
-For each of the 55,933 stops, generate a "DNA Profile":
-- `wealth_index`: Mean price/m2 in 1500m radius.
-- `pop_density`: Total population in 1500m radius (NSP 2021).
-- `poi_score`: Count of critical POIs (Schools, Hospitals, Trade).
-- `transit_load`: (Lines count * average frequency).
+### Step 1: Multi-Dimensional Stop DNA Calculation (`15_compute_stop_dna.py`)
+For each of the 55,933 stops, generate a high-fidelity "DNA Profile" based on Engine 7.1 metrics:
+- **Infrastructure Gravity**: Sum of weighted POIs with distance decay and volume factors.
+- **Wealth Index**: Median property price/m² in the district context.
+- **Population Reach**: Real inhabitant count in the immediate transit catchment area.
+- **Transit Connectivity**: Multi-operator line density and frequency analysis.
 
 ## Phase 2.1: The Urban Gravity Engine (ISC+) - ADVANCED MODELING
 This phase introduces infrastructural intelligence by weighting POIs based on local context and physical scale.
@@ -56,6 +56,12 @@ This phase introduces infrastructural intelligence by weighting POIs based on lo
 - **Volume Factor:** Polygon-based POIs (buildings) are multiplied by $\log(Area \times Levels)$.
 - **Saturation Penalty:** Diminishing returns for repetitive services (e.g., the 5th supermarket in one zone adds less value than the 1st).
 - **Blacklist:** Zero-weight for urban noise (benches, waste baskets, parking spaces).
+
+### Step 1.4: The DNA Computing Engine
+- **Spatial Fusion**: Perform a 4-way join between Stops, Clipped Population, Hardened RCN, and Scarcity-Weighted Infrastructure.
+- **Distance Decay Function**: $1 - (Distance / 500)$ linear attenuation for services.
+- **Economic Filtering**: Exclusion of non-market real estate transactions (< 2000 PLN/m2).
+- **Parity Scaling**: Normalization of all scores to a 0-100 range for both **Local Rank** (within city) and **National Intensity** (across all 29 hubs).
 
 ### Step 2: Spatial Routing Audit (`routing_analysis.py`)
 ...

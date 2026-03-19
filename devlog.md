@@ -183,7 +183,40 @@ Ten dokument zawiera szczegółowy zapis kroków podjętych w projekcie, wraz z 
 - **Skalowalność:** Model zapewnia uczciwe porównanie między metropolią (Warszawa) a mniejszymi ośrodkami (Giżycko), zachowując rzędy wielkości właściwe dla funkcji społecznej obiektów.
 
 ---
-**Status Projektu:** System wyceny infrastruktury jest "betonowy". Przechodzimy do obliczeń DNA Przystanków (Faza 2).
+
+## Faza 13: Ewolucja ku Precyzji (Urban Gravity 5.0 - 6.2)
+
+### 31. Kryzys Skali i "Lądowiska w Suwałkach"
+- **Problem:** Silnik 4.1 nadawał ogromne wagi trawiastym lądowiskom przez liniowe skalowanie powierzchni.
+- **Rozwiązanie (v5.0):** Wprowadzenie logarytmicznego skalowania powierzchni `1 + log10(Area/100)` oraz filtra IATA dla lotnisk kontynentalnych.
+
+### 32. Detekcja Hubów i Rygor Techniczny (UIC-LOCK)
+- **Problem:** Nielogiczne wagi dla stacji metra i transformatorów (szum "station" w OSM).
+- **Rozwiązanie (v6.1):** Wprowadzenie wymogu kodu `uic_ref` dla Tier 0. Przystanki metra i lokalne PKP zdegradowane do Tier 1/2.
+- **Korekta (v6.2):** Wdrożenie modelu hybrydowego (Struktura + Nazwa) dla kluczowych dworców jak Łódź Fabryczna, które nie posiadały jawnego UIC w punktach.
+
+---
+
+## Faza 14: Konsolidacja Ekonomiczna i Master Taxonomy (v7.1)
+
+### 33. Od semantyki do struktury (HSTORE Parser)
+- **Działanie:** Porzucenie regexów na rzecz stanowego parsera HSTORE. Eliminacja błędów `N/A`.
+- **Uzasadnienie:** 100% odzyskiwalność nazw i tagów technicznych niezależnie od formatowania OSM.
+
+### 34. Taksonomia 7.1: Model "Praca i Nauka"
+- **Działanie:** Pełna rewizja 1200+ tagów.
+- **Kluczowe zmiany:** 
+    - Awans Biur (`business_office`), Przemysłu (`industrial_zone`) i Logistyki (`logistics_hub`) do Tier 2.
+    - Awans Akademików (`student_dormitory`) do Tier 2.
+    - Agregacja kategorii do standardu angielskiego (Master Taxonomy).
+- **Wynik:** Dworzec Centralny (3.2 mld) > Szpital (250 mln) > Biurowiec (10 mln) > Żabka (80 tys.).
+
+### 35. Optymalizacja Wydajności (Parallel Engine)
+- **Działanie:** Wdrożenie `ProcessPoolExecutor`.
+- **Wynik:** Przetwarzanie 29 miast (miliony POI) skrócone z 15 minut do 55 sekund.
+
+---
+**Status Projektu:** Silnik wyceny 7.1 zweryfikowany narodowym audytem zbiorczym. Wszystkie 29 aglomeracji posiada znormalizowane "cenniki grawitacji". System gotowy do obliczania profilu DNA przystanków.
 
 
 
