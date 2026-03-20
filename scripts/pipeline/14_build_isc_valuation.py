@@ -11,8 +11,14 @@ import time
 
 warnings.filterwarnings("ignore")
 
-CITIES_ROOT = Path("data/cities")
-REPORT_PATH = Path("reports/national_valuation_summary.txt")
+def get_data_dir():
+    return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
+
+def get_allowed_cities():
+    cities_env = os.environ.get("PIPELINE_CITIES")
+    if cities_env:
+        return [c.strip() for c in cities_env.split(',')]
+    return None
 
 # --- URBAN GRAVITY ENGINE 7.1: ECONOMIC COMPLETENESS ---
 TIER_VALUES = {
@@ -134,14 +140,14 @@ def identify_v7_1_tag(row, city_name):
             
     return None, None
 
-def process_city(city_name):
-    city_dir = CITIES_ROOT / city_name
+def process_city(city_dir):
+    city_name = city_dir.name
     spatial_dir = city_dir / "02_spatial"
     pop_path = spatial_dir / "population_250m.gpkg"
     infra_path = spatial_dir / "infrastructure.gpkg"
     if not pop_path.exists() or not infra_path.exists(): return None
     try:
-        pop = gpd.read_file(pop_path); h_grav = math.log10(pop["TOT"].sum()) if not pop.empty else 1.0
+        pop = gpd.read_file(pop_path); h_grav = math.log10(pop["TOT"].sum()) if not pop.empty and pop["TOT"].sum() > 0 else 1.0
         objs = []
         for layer in ["points", "multipolygons"]:
             gdf = gpd.read_file(infra_path, layer=layer)
@@ -169,14 +175,31 @@ def process_city(city_name):
     except Exception as e: return f"ERROR_{city_name}", str(e)
 
 def run():
-    cities = sorted([d.name for d in CITIES_ROOT.iterdir() if d.is_dir()])
+    data_dir = get_data_dir()
+    cities_root = data_dir / "cities"
+    if not cities_root.exists(): return
+    
+    allowed_cities = get_allowed_cities()
+    
+    cities = []
+    for d in cities_root.iterdir():
+        if d.is_dir():
+            if allowed_cities and d.name not in allowed_cities: continue
+            cities.append(d)
+            
+    cities = sorted(cities, key=lambda x: x.name)
+            
     print(f"Uruchamianie Urban Gravity Engine 7.1 (ECONOMIC) na {os.cpu_count()} rdzeniach...")
     with ProcessPoolExecutor() as executor:
         results = list(executor.map(process_city, cities))
+        
     all_vals = {r[0]: r[1] for r in results if r and not r[0].startswith("ERROR")}
     
-    test_cities = ["warszawa", "krakow", "lodz", "trojmiasto", "bialystok"]
-    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+    report_path = data_dir / "reports" / "national_valuation_summary.txt"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    test_cities = ["warszawa", "krakow", "lodz", "trojmiasto", "bialystok", "kielce"]
+    with open(report_path, "w", encoding="utf-8") as f:
         f.write("URBAN GRAVITY ENGINE 7.1 - FINAL AGGREGATED VALUATION AUDIT (ECONOMIC COMPLETENESS)\n")
         f.write("Standard: Work & Industry Included | Hub Compression | No Noise\n")
         f.write("="*105 + "\n\n")
@@ -190,7 +213,7 @@ def run():
                 for cat, d in top:
                     f.write(f"{cat:35} | {d['tier']:20} | {d['count']:5} | {d['final_value']:15.0f}\n")
                 f.write("\n" + "="*105 + "\n\n")
-    print(f"Analiza zakończona. Raport: {REPORT_PATH}")
+    print(f"Analiza zakończona. Raport: {report_path}")
 
 if __name__ == "__main__":
     run()

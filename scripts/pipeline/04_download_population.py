@@ -10,13 +10,16 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Zweryfikowany link bezpośredni dostarczony przez użytkownika
 DIRECT_DATA_URL = "https://geo.stat.gov.pl/atom-web/download/?fileId=73995564fe6126cc9d8eafd0c7fe822f&name=NSP2021_TOT_GRID250m_GPKG.zip"
-DEST_DIR = Path("data/poland/population")
+
+def get_data_dir():
+    return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
 
 def download_population():
-    DEST_DIR.mkdir(parents=True, exist_ok=True)
-    target_path = DEST_DIR / "nsp2021_grid250m.gpkg"
+    dest_dir = get_data_dir() / "poland" / "population"
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    target_path = dest_dir / "nsp2021_grid250m.gpkg"
     
-    if target_path.exists():
+    if target_path.exists() and target_path.stat().st_size > 1_000_000_000:
         print(f"Siatka populacji już istnieje w: {target_path}")
         return
 
@@ -35,9 +38,9 @@ def download_population():
             if gpkg_names:
                 # Wybieramy najwiekszy plik lub pierwszy pasujący
                 gpkg_name = gpkg_names[0]
-                z.extract(gpkg_name, path=DEST_DIR)
+                z.extract(gpkg_name, path=dest_dir)
                 
-                old_path = DEST_DIR / gpkg_name
+                old_path = dest_dir / gpkg_name
                 if old_path != target_path:
                     if target_path.exists(): os.remove(target_path)
                     os.rename(str(old_path), str(target_path))

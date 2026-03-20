@@ -2,8 +2,12 @@ import os
 import requests
 import zipfile
 import io
+import time
 import concurrent.futures
 from pathlib import Path
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 GTFS_SOURCES = {
     "https://mkuran.pl/gtfs/warsaw.zip": "warszawa",
@@ -29,6 +33,7 @@ GTFS_SOURCES = {
     "https://cdn.zbiorkom.live/gtfs/tricity-gdynia.zip": "trojmiasto",
     "https://mkuran.pl/gtfs/wejherowo.zip": "trojmiasto",
     "https://cdn.zbiorkom.live/gtfs/pkp-skmt.zip": "trojmiasto",
+    "https://ckan.multimediagdansk.pl/dataset/c24aa637-3619-4dc2-a171-a23eec8f2172/resource/30e783e4-2bec-4a7d-bb22-ee3e3b26ca96/download/gtfsgoogle.zip": "trojmiasto",
 
     "https://mkuran.pl/gtfs/gzm.zip": "gzm",
     "https://cdn.zbiorkom.live/gtfs/rybnik.zip": "gzm",
@@ -67,6 +72,7 @@ GTFS_SOURCES = {
     "https://cdn.zbiorkom.live/gtfs/opole.zip": "opole",
     "https://cdn.zbiorkom.live/gtfs/czestochowa.zip": "czestochowa",
     "https://cdn.zbiorkom.live/gtfs/gorzow.zip": "gorzow",
+    "https://mkuran.pl/gtfs/gorzow_wlkp.zip": "gorzow",
     
     "https://mkuran.pl/gtfs/elk.zip": "elk",
     "https://mkuran.pl/gtfs/elblag.zip": "elblag",
@@ -77,45 +83,81 @@ GTFS_SOURCES = {
     "https://cdn.zbiorkom.live/gtfs/kutno.zip": "kutno",
     "https://cdn.zbiorkom.live/gtfs/legnica.zip": "legnica",
     "https://cdn.zbiorkom.live/gtfs/leszno.zip": "leszno",
-    "https://cdn.zbiorkom.live/gtfs/przemysl.zip": "przemysl"
+    "https://cdn.zbiorkom.live/gtfs/przemysl.zip": "przemysl",
+    
+    # --- DODATKOWE LOKALNE ---
+    "https://cdn.zbiorkom.live/gtfs/tribus.zip": "lodz",
+    "https://kasmar00.github.io/gtfs-warsaw-custom/feeds/warsaw-ferries/latest.zip": "warszawa",
+    "http://komunikacja.bialystok.pl/cms/File/download/gtfs/google_transit.zip": "bialystok",
+    
+    # --- KOLEJ REGIONALNA ---
+    "https://cdn.zbiorkom.live/gtfs/pkp-kd.zip": "wroclaw",   # Koleje Dolnośląskie
+    "https://cdn.zbiorkom.live/gtfs/pkp-ks.zip": "gzm",       # Koleje Śląskie (zbiorkom)
+    "https://koleje-ks.pl/gtfs/2025-2026.zip": "gzm",         # Koleje Śląskie (oficjalne)
+    "https://cdn.zbiorkom.live/gtfs/pkp-km.zip": "warszawa",  # Koleje Mazowieckie
+    "https://cdn.zbiorkom.live/gtfs/pkp-kml.zip": "krakow",   # Koleje Małopolskie
+    "https://cdn.zbiorkom.live/gtfs/pkp-kw.zip": "poznan",    # Koleje Wielkopolskie
+    "https://cdn.zbiorkom.live/gtfs/pkp-lka.zip": "lodz",     # ŁKA
+    "https://cdn.zbiorkom.live/gtfs/pkp-ar.zip": "bydgoszcz", # Arriva
+    "https://cdn.zbiorkom.live/gtfs/pkp-wkd.zip": "warszawa", # WKD
+    
+    # --- KOLEJ KRAJOWA / OGÓLNA ---
+    "https://mkuran.pl/gtfs/polish_trains.zip": "rail"
 }
 
-BLACKLIST = [
-    "polish_trains", "pkp-ic", "pkp-pr", "pkp-ar", "pkp-km", 
-    "pkp-kml", "pkp-ks", "pkp-kw", "pkp-kd", "pkp-rj", "rail"
-]
+def get_cities_root():
+    return Path(os.environ.get("PIPELINE_DATA_DIR", "data")) / "cities"
 
-CITIES_ROOT = Path("data/cities")
+def get_allowed_cities():
+    cities_env = os.environ.get("PIPELINE_CITIES")
+    if cities_env:
+        return [c.strip() for c in cities_env.split(',')]
+    return None
 
-def fetch_worker(url, city):
+def fetch_worker(url, city, cities_root):
     filename = url.split('/')[-1]
-    if any(b in filename for b in BLACKLIST):
-        return f"[CZARNA LISTA] {filename}"
         
-    target_dir = CITIES_ROOT / city / "gtfs" / filename.replace('.zip', '')
+    target_dir = cities_root / city / "gtfs" / filename.replace('.zip', '')
     target_dir.mkdir(parents=True, exist_ok=True)
     
     if (target_dir / "stops.txt").exists():
         return f"[POMINIĘTO] {city}/{filename} (już jest)"
 
-    try:
-        r = requests.get(url, stream=True, timeout=30)
-        r.raise_for_status()
-        zip_buffer = io.BytesIO(r.content)
-        
-        with zipfile.ZipFile(zip_buffer) as z:
-            z.extractall(target_dir)
-        return f"[SUKCES] {city}/{filename}"
-    except Exception as e:
-        return f"[BŁĄD] {city}/{filename}: {e}"
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            r = requests.get(url, stream=True, timeout=30, verify=False)
+            r.raise_for_status()
+            zip_buffer = io.BytesIO(r.content)
+            
+            with zipfile.ZipFile(zip_buffer) as z:
+                z.extractall(target_dir)
+            return f"[SUKCES] {city}/{filename}"
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)  # Exponential backoff
+            else:
+                return f"[BŁĄD] {city}/{filename}: {e}"
 
 def fetch_all():
-    print("=== PRAWDZIWY RÓWNOLEGŁY GTFS DOWNLOADER ===")
-    tasks = list(GTFS_SOURCES.items())
+    print("=== PRAWDZIWY RÓWNOLEGŁY GTFS DOWNLOADER (Self-Healing) ===")
+    cities_root = get_cities_root()
+    allowed_cities = get_allowed_cities()
+    
+    tasks = []
+    for url, city in GTFS_SOURCES.items():
+        if allowed_cities and city not in allowed_cities:
+            continue
+        tasks.append((url, city))
+        
     print(f"Ilość paczek do pobrania: {len(tasks)}")
     
+    if not tasks:
+        print("Brak zadań. Sprawdź filtry miast.")
+        return
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        futures = [executor.submit(fetch_worker, url, city) for url, city in tasks]
+        futures = [executor.submit(fetch_worker, url, city, cities_root) for url, city in tasks]
         for future in concurrent.futures.as_completed(futures):
             print(future.result())
 

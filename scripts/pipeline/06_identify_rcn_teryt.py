@@ -1,9 +1,19 @@
 import geopandas as gpd
 import json
+import os
 from pathlib import Path
 
-POWIATY_PATH = Path("data/poland/admin/powiaty.json")
-CITIES_ROOT = Path("data/cities")
+def get_data_dir():
+    return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
+
+def get_allowed_cities():
+    cities_env = os.environ.get("PIPELINE_CITIES")
+    if cities_env:
+        return [c.strip() for c in cities_env.split(',')]
+    return None
+
+POWIATY_PATH = get_data_dir() / "poland" / "admin" / "powiaty.json"
+CITIES_ROOT = get_data_dir() / "cities"
 
 def identify_targets():
     print("=== IDENTYFIKACJA POWIATÓW DLA RCN (Spatial Join) ===")
@@ -16,13 +26,23 @@ def identify_targets():
     print("Wczytywanie granic powiatów...")
     powiaty = gpd.read_file(POWIATY_PATH).to_crs("EPSG:2180")
     
+    if not CITIES_ROOT.exists():
+        print("Brak folderu cities.")
+        return
+
     cities = sorted([d for d in CITIES_ROOT.iterdir() if d.is_dir()])
+    allowed_cities = get_allowed_cities()
     
     for city_dir in cities:
         city_name = city_dir.name
+        
+        if allowed_cities and city_name not in allowed_cities:
+            continue
+            
         zone_path = city_dir / "transport_zone.gpkg"
         
         if not zone_path.exists():
+            print(f"[SKIP] {city_name}: brak transport_zone.gpkg")
             continue
             
         try:

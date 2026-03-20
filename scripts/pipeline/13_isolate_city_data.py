@@ -7,11 +7,17 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-CITIES_ROOT = Path("data/cities")
-POP_PATH = Path("data/poland/population/nsp2021_grid250m.gpkg")
+def get_data_dir():
+    return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
 
-def isolate_city(city_name, pop_grid):
-    city_dir = CITIES_ROOT / city_name
+def get_allowed_cities():
+    cities_env = os.environ.get("PIPELINE_CITIES")
+    if cities_env:
+        return [c.strip() for c in cities_env.split(',')]
+    return None
+
+def isolate_city(city_name, data_dir):
+    city_dir = data_dir / "cities" / city_name
     print(f"\n--- Izolacja danych dla: {city_name.upper()} ---")
     
     # 1. Tworzenie nowej struktury
@@ -35,44 +41,64 @@ def isolate_city(city_name, pop_grid):
     if rcn_old.exists():
         shutil.move(str(rcn_old), str(city_dir / "02_spatial" / "transactions.gpkg"))
         # Usuwamy stary pusty folder rcn/
-        if (city_dir / "rcn").exists(): shutil.rmtree(city_dir / "rcn")
+        if (city_dir / "rcn").exists() and not os.listdir(city_dir / "rcn"):
+            shutil.rmtree(city_dir / "rcn")
         
     # 3. Wycinanie lokalnej siatki populacji
     stops_path = city_dir / "02_spatial" / "stops.gpkg"
     target_pop = city_dir / "02_spatial" / "population_250m.gpkg"
+    pop_path = data_dir / "poland" / "population" / "nsp2021_grid250m.gpkg"
     
-    if stops_path.exists() and pop_grid is not None and not target_pop.exists():
+    if stops_path.exists() and pop_path.exists() and not target_pop.exists():
         try:
-            print(f"  Wycinanie lokalnej siatki populacji...")
+            print(f"  Wycinanie lokalnej siatki populacji (odczyt BBOX bez przepełniania RAM)...")
             stops = gpd.read_file(stops_path)
-            # Tworzymy obwiednię miasta z lekkim buforem (np. 2km)
-            city_bbox = stops.to_crs(pop_grid.crs).total_bounds
-            # Wycinamy siatkę na podstawie BBOX dla szybkości
-            clipped_pop = pop_grid.cx[city_bbox[0]:city_bbox[2], city_bbox[1]:city_bbox[3]]
+            
+            # 1. Pobieramy CRS siatki (nsp2021 jest w EPSG:3035 - ETRS89-LAEA)
+            import fiona
+            with fiona.open(pop_path) as src:
+                grid_crs = src.crs
+            
+            print(f"  Wykryto CRS siatki: {grid_crs}")
+            
+            # 2. Transformacja BBOX do układu siatki
+            # Przystanki są w 4326. Musimy je rzutować na 3035, aby BBOX był w metrach LAEA.
+            stops_in_grid_crs = stops.to_crs(grid_crs)
+            city_bbox = stops_in_grid_crs.total_bounds
+            print(f"  BBOX w CRS siatki: {city_bbox}")
+            
+            # 3. Wczytujemy z dysku tylko wycinek dla danego BBOX!
+            clipped_pop = gpd.read_file(pop_path, bbox=tuple(city_bbox))
             
             if not clipped_pop.empty:
-                # Zapisujemy tylko kolumnę TOT i geometrię
-                clipped_pop[['TOT', 'geometry']].to_file(target_pop, driver="GPKG")
-                print(f"  Zapisano {len(clipped_pop)} komórek populacji.")
+                # KRYTYCZNE: Konwertujemy wynik do standardu projektu EPSG:2180
+                clipped_pop = clipped_pop.to_crs("EPSG:2180")
+                
+                if 'TOT' in clipped_pop.columns:
+                    clipped_pop[['TOT', 'geometry']].to_file(target_pop, driver="GPKG")
+                else:
+                    clipped_pop.to_file(target_pop, driver="GPKG")
+                print(f"  [SUKCES] Zapisano {len(clipped_pop)} komórek populacji w EPSG:2180.")
             else:
-                print("  OSTRZEŻENIE: Brak pokrycia populacji dla tego obszaru.")
+                print(f"  [BŁĄD] Pusty wycinek populacji! BBOX: {city_bbox}")
+                # Nie tworzymy pustego pliku
         except Exception as e:
-            print(f"  Błąd wycinania populacji: {e}")
+            print(f"  [BŁĄD KRYTYCZNY] Wycinanie populacji nie powiodło się: {e}")
+            raise e
 
 def run_isolation():
-    cities = sorted([d.name for d in CITIES_ROOT.iterdir() if d.is_dir()])
+    data_dir = get_data_dir()
+    cities_root = data_dir / "cities"
+    allowed_cities = get_allowed_cities()
     
-    print("Wczytywanie narodowej siatki populacji (może chwilę potrwać)...")
-    try:
-        # Wczytujemy tylko kolumnę TOT i geometrię, żeby oszczędzić RAM
-        pop_grid = gpd.read_file(POP_PATH)
-        print(f"Siatka wczytana: {len(pop_grid)} rekordów.")
-    except Exception as e:
-        print(f"BŁĄD: Nie można wczytać siatki populacji: {e}")
-        pop_grid = None
+    if not cities_root.exists(): return
+    
+    cities = sorted([d.name for d in cities_root.iterdir() if d.is_dir()])
 
     for city in cities:
-        isolate_city(city, pop_grid)
+        if allowed_cities and city not in allowed_cities:
+            continue
+        isolate_city(city, data_dir)
         
     print("\nPROCES IZOLACJI ZAKOŃCZONY.")
 
