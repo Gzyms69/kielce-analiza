@@ -2,6 +2,7 @@ import requests
 import zipfile
 import io
 import os
+import sys
 from pathlib import Path
 import urllib3
 
@@ -47,10 +48,12 @@ def download_population():
                 
                 print(f"SUKCES! Siatka populacji zapisana w: {target_path}")
             else:
-                print("BŁĄD: Nie znaleziono pliku .gpkg wewnątrz pobranej paczki ZIP.")
+                print("BŁĄD: Nie znaleziono pliku .gpkg wewnątrz pobranej paczki ZIP.", file=sys.stderr)
+                sys.exit(1)
 
     except Exception as e:
-        print(f"BŁĄD KRYTYCZNY podczas pobierania populacji: {e}")
+        print(f"BŁĄD KRYTYCZNY podczas pobierania populacji: {e}", file=sys.stderr)
+        sys.exit(1)
 
 if __name__ == "__main__":
     download_population()

@@ -1,10 +1,12 @@
-import subprocess
-import geopandas as gpd
-from pathlib import Path
-import time
 import os
-import argparse
+import json
+import subprocess
+import concurrent.futures
+from pathlib import Path
+import geopandas as gpd
+import time
 import sys
+import argparse
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
@@ -15,105 +17,97 @@ def get_allowed_cities():
         return [c.strip() for c in cities_env.split(',')]
     return None
 
-PBF_SOURCE = get_data_dir() / "poland" / "osm" / "poland-latest.osm.pbf"
-CITIES_ROOT = get_data_dir() / "cities"
-OSMCONF = Path("config/osmconf.ini")
+def get_worker_limit():
+    return int(os.environ.get("PIPELINE_WORKERS", 2))
 
-def extract_city_infrastructure(city_dir, force=False):
-    city_name = city_dir.name
+def run_osmium_and_ogr(city_name, data_dir, pbf_source, force):
+    """Wykonuje precyzyjne cięcie i konwersję (Twoja oryginalna metoda Turbo)."""
+    city_dir = data_dir / "cities" / city_name
     spatial_dir = city_dir / "02_spatial"
-    
-    # 02_spatial is the Hub 2.0 standard
     zone_file = city_dir / "transport_zone.gpkg"
     output_gpkg = spatial_dir / "infrastructure.gpkg"
     temp_pbf = spatial_dir / "temp_extract.pbf"
     temp_geojson = spatial_dir / "zone.geojson"
-        
-    if not zone_file.exists():
-        print(f"[SKIP] {city_name}: Brak poligonu tnącego (transport_zone.gpkg)")
-        return
-        
-    if output_gpkg.exists() and not force:
-        print(f"[SKIP] {city_name}: Infrastruktura już istnieje. Użyj --force aby nadpisać.")
-        return
-
-    print(f"\n--- EKSTRAKCJA INFRASTRUKTURY (OSM SCALPEL): {city_name.upper()} ---")
-    start_time = time.time()
     
+    if output_gpkg.exists() and not force:
+        return True, city_name, "CACHED"
+
     try:
+        # 1. Przygotowanie wykrojnika GeoJSON (wymagane przez Osmium)
         spatial_dir.mkdir(parents=True, exist_ok=True)
+        gdf = gpd.read_file(zone_file)
+        gdf.to_file(temp_geojson, driver='GeoJSON')
         
-        # 1. Konwersja wykrojnika do GeoJSON (wymagane przez osmium extract -p)
-        print(f"  [1/3] Przygotowanie poligonu tnącego...")
-        zone_gdf = gpd.read_file(zone_file)
-        zone_gdf.to_file(temp_geojson, driver='GeoJSON')
-        
-        # 2. OSMIUM: Szybkie wycinanie po POLIGONIE (zamiast BBOX)
-        print(f"  [2/3] Osmium: Precyzyjne cięcie poligonem...")
-        subprocess.run([
-            "osmium", "extract",
-            "-p", str(temp_geojson),
-            str(PBF_SOURCE),
-            "-o", str(temp_pbf),
-            "--overwrite"
-        ], check=True, capture_output=True)
+        # 2. OSMIUM: Najszybsze cięcie poligonem (Twój wzorzec z archiwum)
+        print(f"[{city_name}] OSMIUM: Wycinanie poligonem...", flush=True)
+        result = subprocess.run([
+            "osmium", "extract", "-p", str(temp_geojson),
+            str(pbf_source), "-o", str(temp_pbf), "--overwrite"
+        ], check=True, capture_output=True, text=True)
+        if result.stderr:
+            print(f"[{city_name}] OSMIUM stderr: {result.stderr.strip()}", flush=True)
         
         # 3. OGR2OGR: Błyskawiczna konwersja gotowego wycinka
-        print(f"  [3/3] OGR2OGR: Generowanie bazy GPKG...")
-        os.environ["OSM_CONFIG_FILE"] = str(OSMCONF)
-        
-        subprocess.run([
+        osmconf = Path("config/osmconf.ini")
+        os.environ["OSM_CONFIG_FILE"] = str(osmconf)
+        print(f"[{city_name}] OGR2OGR: Konwersja do GPKG...", flush=True)
+        result = subprocess.run([
             "ogr2ogr", "-f", "GPKG", str(output_gpkg), str(temp_pbf),
-            "-gt", "65536", 
-            "-nlt", "PROMOTE_TO_MULTI",
-            "-lco", "GEOMETRY_NAME=geometry",
-            "-skipfailures"
-        ], check=True, capture_output=True)
+            "-gt", "65536", "-nlt", "PROMOTE_TO_MULTI",
+            "-dim", "XY", "-lco", "GEOMETRY_NAME=geometry", "-skipfailures",
+            "--config", "OGR_SQLITE_SYNCHRONOUS", "OFF",
+            "--config", "OSM_USE_CUSTOM_INDEXING", "NO"
+        ], check=True, capture_output=True, text=True)
+        if result.stderr:
+            print(f"[{city_name}] OGR2OGR stderr: {result.stderr.strip()}", flush=True)
         
-        # Czyszczenie
+        # --- AUDYT DANYCH ---
+        pts = gpd.read_file(output_gpkg, layer="points")
+        polys = gpd.read_file(output_gpkg, layer="multipolygons")
+        print(f"[{city_name}] WYNIK: POI={len(pts)}, Budynki={len(polys)}", flush=True)
+        
+        # Sprzątanie
         for f in [temp_pbf, temp_geojson]:
             if f.exists(): f.unlink()
-        
-        duration = time.time() - start_time
-        size = output_gpkg.stat().st_size / (1024*1024)
-        print(f"  [OK] Sukces! Czas: {duration:.1f}s | Rozmiar: {size:.1f} MB")
-        
-    except subprocess.CalledProcessError as e:
-        print(f"  [ERR] Błąd procesu zewnętrznego: {e.stderr.decode() if e.stderr else str(e)}")
+            
+        return True, city_name, {"poi": len(pts), "poly": len(polys)}
     except Exception as e:
-        print(f"  [ERR] Błąd krytyczny: {e}")
+        print(f"[{city_name}] BŁĄD: {e}", flush=True)
+        return False, city_name, str(e)
+
+def extract_all(force=False):
+    print("\n=== TURBO OSM EXTRACTION 3.0 (BACK TO ARCHIVE PATTERN) ===", flush=True)
+    data_dir = get_data_dir()
+    pbf_source = data_dir / "poland" / "osm" / "poland-latest.osm.pbf"
+    cities_root = data_dir / "cities"
+    
+    allowed_cities = get_allowed_cities()
+    cities_to_process = []
+    
+    for city_dir in sorted(cities_root.iterdir()):
+        if not city_dir.is_dir() or city_dir.name == 'rail': continue
+        if allowed_cities and city_dir.name not in allowed_cities: continue
+        if (city_dir / "transport_zone.gpkg").exists():
+            cities_to_process.append(city_dir.name)
+
+    start_time = time.time()
+    success_count = 0
+    # Osmium i OGR2OGR są na tyle szybkie przy małych wycinkach, że możemy jechać równolegle (limit 2-3)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=get_worker_limit()) as executor:
+        futures = [executor.submit(run_osmium_and_ogr, c, data_dir, pbf_source, force) for c in cities_to_process]
+        for future in concurrent.futures.as_completed(futures):
+            ok, name, res = future.result()
+            if ok: success_count += 1
+
+    duration = int(time.time() - start_time)
+    print(f"\nAnaliza OSM ukończona w {duration}s.", flush=True)
+    print(f"__PIPELINE_METRICS__={json.dumps({'step': '05', 'success': success_count, 'time_s': duration})}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Ekstrakcja infrastruktury OSM dla aglomeracji.")
-    parser.add_argument("--city", help="Nazwa konkretnego miasta do przetworzenia")
-    parser.add_argument("--force", action="store_true", help="Nadpisz istniejące pliki")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
-
-    if not PBF_SOURCE.exists():
-        print(f"BŁĄD: Brak źródłowego pliku PBF: {PBF_SOURCE}")
-        sys.exit(1)
-
-    if not OSMCONF.exists():
-        print(f"BŁĄD: Brak pliku konfiguracyjnego: {OSMCONF}")
-        sys.exit(1)
-
-    allowed_cities = get_allowed_cities()
-
-    if args.city:
-        city_dir = CITIES_ROOT / args.city.lower()
-        if city_dir.exists():
-            if not allowed_cities or args.city.lower() in allowed_cities:
-                extract_city_infrastructure(city_dir, force=args.force)
-        else:
-            print(f"BŁĄD: Nie znaleziono folderu dla miasta: {args.city}")
-    else:
-        print("=== URUCHAMIANIE EKSTRAKCJI NARODOWEJ (Idempotent) ===")
-        if CITIES_ROOT.exists():
-            cities = sorted([d for d in CITIES_ROOT.iterdir() if d.is_dir()])
-            for city_dir in cities:
-                if allowed_cities and city_dir.name not in allowed_cities:
-                    continue
-                extract_city_infrastructure(city_dir, force=args.force)
+    extract_all(force=args.force)
 
 if __name__ == "__main__":
     main()

@@ -7,6 +7,7 @@ from pathlib import Path
 import subprocess
 import concurrent.futures
 from datetime import datetime
+import threading
 
 def setup_logger(data_dir):
     log_dir = Path(data_dir) / "logs"
@@ -15,13 +16,13 @@ def setup_logger(data_dir):
     logger = logging.getLogger("TurboOrchestrator")
     logger.setLevel(logging.DEBUG)
     
-    # Konsola - tylko INFO i wyżej, czysty format
+    # Konsola: INFO i wyżej, czysty format dla użytkownika
     ch = logging.StreamHandler()
     ch.setLevel(logging.INFO)
     formatter = logging.Formatter('%(asctime)s | %(message)s', datefmt='%H:%M:%S')
     ch.setFormatter(formatter)
     
-    # Plik - pełny debug
+    # Plik: Pełny zapis wszystkiego
     fh = logging.FileHandler(log_dir / "pipeline_run.log")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
@@ -36,83 +37,116 @@ class TurboOrchestrator:
         self.force_update = force_update
         self.max_workers = max_workers
         self.state_file = self.data_dir / ".pipeline_state.json"
+        self._lock = threading.Lock()
         self.state = self._load_state()
         self.logger = setup_logger(self.data_dir)
         
-        # Inicjalizacja listy miast
         cities_root = self.data_dir / "cities"
         if cities == ['all']:
             if cities_root.exists():
-                self.target_cities = sorted([d.name for d in cities_root.iterdir() if d.is_dir()])
+                self.target_cities = sorted([d.name for d in cities_root.iterdir() if d.is_dir() and d.name != 'rail'])
             else:
                 self.target_cities = []
         else:
             self.target_cities = cities
 
-        # Zmienne środowiskowe dla skryptów potomnych
+        # EKSPORT ZMIENNYCH ŚRODOWISKOWYCH (FIX: PRZEKAZYWANIE FILTRÓW)
         os.environ["PIPELINE_DATA_DIR"] = str(self.data_dir)
+        os.environ["PIPELINE_WORKERS"] = str(self.max_workers)
+        if cities != ['all']:
+            os.environ["PIPELINE_CITIES"] = ",".join(self.target_cities)
+        else:
+            os.environ.pop("PIPELINE_CITIES", None)
 
     def _load_state(self):
-        if not self.force_update and self.state_file.exists():
-            try:
-                with open(self.state_file, 'r') as f:
-                    return json.load(f)
-            except: return {}
-        return {}
+        with self._lock:
+            if not self.force_update and self.state_file.exists():
+                try:
+                    with open(self.state_file, 'r') as f:
+                        return json.load(f)
+                except (json.JSONDecodeError, IOError) as e:
+                    self.logger.warning(f"Nie udalo sie wczytac state: {e}")
+                    return {}
+            return {}
 
     def _save_state(self):
-        with open(self.state_file, 'w') as f:
-            json.dump(self.state, f, indent=4)
+        with self._lock:
+            with open(self.state_file, 'w') as f:
+                json.dump(self.state, f, indent=4)
 
     def stream_process(self, cmd, label):
-        """Uruchamia proces i strumieniuje KAŻDĄ linię outputu do konsoli."""
+        """Uruchamia proces i natychmiastowo przekazuje każdą linię na ekran."""
         process = subprocess.Popen(
             cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,
             env=os.environ.copy(),
-            bufsize=1,
+            bufsize=1, # Line buffered
             universal_newlines=True
         )
         
-        output_lines = []
+        metrics = None
+        # Przekazujemy output do loggera (by trafił do pliku) i na ekran
         for line in iter(process.stdout.readline, ""):
-            line = line.strip()
-            if line:
-                self.logger.info(f"[{label}] {line}")
-                output_lines.append(line)
+            if line.startswith("__PIPELINE_METRICS__="):
+                try:
+                    metrics = json.loads(line.split("=", 1)[1])
+                except json.JSONDecodeError:
+                    pass
+            else:
+                clean_line = line.strip()
+                if clean_line:
+                    # To teraz trafia do FileHandler i StreamHandler
+                    self.logger.info(f"[{label:^10}] {clean_line}")
         
         process.stdout.close()
-        return process.wait(), output_lines
+        return process.wait(), metrics
 
     def run_global_step(self, step_id, script_path):
-        """Kroki globalne (00-04, 06, 11) - uruchamiane raz."""
-        self.logger.info(f"\n>>> KROK GLOBALNY: {step_id} ({Path(script_path).name})")
+        self.logger.info(f"\n" + "="*80)
+        self.logger.info(f" START KROKU: {step_id} ({Path(script_path).name})")
+        self.logger.info("="*80)
         
         if not self.force_update and self.state.get(step_id) == "SUCCESS":
             self.logger.info(f"--- POMINIĘTO (już wykonane) ---")
             return True
 
         cmd = [sys.executable, str(script_path)]
-        if self.force_update:
-            # Przekazujemy flagę force do skryptu, jeśli ją obsługuje
-            cmd.append("--force")
+        if self.force_update: cmd.append("--force")
 
-        rc, _ = self.stream_process(cmd, step_id)
+        rc, metrics = self.stream_process(cmd, "GLOBAL")
         
         if rc == 0:
             self.state[step_id] = "SUCCESS"
             self._save_state()
+            if metrics:
+                self.logger.info(f"--- RAPORT KOŃCOWY KROKU ---")
+                self.logger.info(json.dumps(metrics, indent=2))
             return True
-        return False
+        else:
+            self.logger.error(f"KROK GLOBALNY {step_id} PADŁ (RC={rc})")
+            return False
 
     def run_city_parallel_step(self, step_id, script_path):
-        """Kroki per-miasto (05, 07, 08, 09, 10, 12, 13, 14) - równolegle."""
-        self.logger.info(f"\n>>> KROK RÓWNOLEGŁY ({self.max_workers} workers): {step_id} ({Path(script_path).name})")
+        self.logger.info(f"\n" + "="*80)
+        self.logger.info(f" START KROKU RÓWNOLEGŁEGO: {step_id} (Workers: {self.max_workers})")
+        self.logger.info("="*80)
         
+        # ODŚWIEŻANIE LISTY MIAST (Fix dla nowo utworzonych folderów w Step 01)
+        cities_root = self.data_dir / "cities"
+        if cities_root.exists():
+            current_on_disk = sorted([d.name for d in cities_root.iterdir() if d.is_dir() and d.name != 'rail'])
+            # Jeśli użytkownik nie podał konkretnej listy, bierzemy wszystko co jest na dysku
+            if not self.target_cities or self.target_cities == ['all']:
+                self.target_cities = current_on_disk
+            # Zmieniamy listę roboczą dla tego kroku, by uwzględnić nowe foldery
+            cities_to_scan = self.target_cities
+        else:
+            cities_to_scan = []
+
         cities_to_do = []
-        for city in self.target_cities:
+        for city in cities_to_scan:
             city_step_key = f"{step_id}_{city}"
             if self.force_update or self.state.get(city_step_key) != "SUCCESS":
                 cities_to_do.append(city)
@@ -121,59 +155,81 @@ class TurboOrchestrator:
             self.logger.info(f"--- WSZYSTKIE MIASTA GOTOWE ---")
             return True
 
-        self.logger.info(f"Przetwarzanie {len(cities_to_do)} miast...")
+        failed = []
+        collected_metrics = []
         
-        results = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            futures = {}
-            for city in cities_to_do:
-                cmd = [sys.executable, str(script_path), "--city", city]
-                if self.force_update:
-                    cmd.append("--force")
-                futures[executor.submit(self.stream_process, cmd, f"{city}")] = city
+            futures = {executor.submit(self.stream_process, [sys.executable, str(script_path), "--city", city, "--force" if self.force_update else ""], city): city for city in cities_to_do}
             
-            done_count = 0
             for future in concurrent.futures.as_completed(futures):
                 city = futures[future]
-                rc, _ = future.result()
-                done_count += 1
+                rc, metrics = future.result()
+                
                 if rc == 0:
-                    self.state[f"{step_id}_{city}"] = "SUCCESS"
-                    self.logger.info(f"[{done_count}/{len(cities_to_do)}] SUCCESS: {city}")
+                    # POPRAWKA P0-4: Sanity checks na metrykach
+                    sanity_fail = False
+                    if metrics:
+                        step_num = step_id.replace('step_', '')
+                        if step_num == '02':
+                            km2 = metrics.get('km2', 0)
+                            if km2 > 5000:
+                                self.logger.error(f"[SANITY FAIL] {city}: area={km2} km2 > 5000 -- podejrzanie duza strefa!")
+                                sanity_fail = True
+                        elif step_num == '13':
+                            pop = metrics.get('pop_total', 0)
+                            if pop > 5_000_000:
+                                self.logger.error(f"[SANITY FAIL] {city}: pop_total={pop:,} > 5M -- prawdopodobny wyciek outlierow!")
+                                sanity_fail = True
+                    
+                    if sanity_fail:
+                        failed.append(city)
+                    else:
+                        self.state[f"{step_id}_{city}"] = "SUCCESS"
+                        self._save_state()
+                        if metrics: collected_metrics.append(metrics)
+                        self.logger.info(f"[DONE] {city}")
                 else:
-                    self.logger.error(f"[{done_count}/{len(cities_to_do)}] FAILED: {city}")
-                    results.append(city)
-                self._save_state()
+                    self.logger.error(f"[FAIL] {city} (RC={rc})")
+                    failed.append(city)
 
-        if results:
-            self.logger.error(f"Krok {step_id} nie powiódł się dla miast: {', '.join(results)}")
+        if collected_metrics:
+            self.logger.info(f"\n--- PODSUMOWANIE ZBIORCZE: {step_id} ---")
+            keys = list(collected_metrics[0].keys())
+            header = " | ".join([f"{str(k).upper():<15}" for k in keys])
+            self.logger.info(header)
+            self.logger.info("-" * len(header))
+            for m in collected_metrics:
+                row = " | ".join([f"{str(m.get(k, '')):<15}" for k in keys])
+                self.logger.info(row)
+
+        if failed:
+            self.logger.error(f"Krok {step_id} nie powiódł się dla: {', '.join(failed)}")
             return False
         return True
 
 def main():
-    parser = argparse.ArgumentParser(description="TURBO Orchestrator 2.0 - Kielce Analiza")
+    parser = argparse.ArgumentParser(description="PANCERNY ORKIESTRATOR 3.1 - TRANSPARENT")
     parser.add_argument("--data-dir", default="data", help="Katalog roboczy")
     parser.add_argument("--cities", nargs="+", default=["all"], help="Miasta lub 'all'")
-    parser.add_argument("--force-update", action="store_true", help="Ignoruj stan")
-    parser.add_argument("--workers", type=int, default=4, help="Ilość równoległych workerów")
-    parser.add_argument("--step", type=int, help="Uruchom konkretny krok")
+    parser.add_argument("--force-update", action="store_true", help="Wymuś nadpisanie danych")
+    parser.add_argument("--workers", type=int, default=2, help="Ilość równoległych procesów (OGR2OGR)")
+    parser.add_argument("--step", type=int, help="Uruchom tylko jeden krok")
     
     args = parser.parse_args()
-    
     orch = TurboOrchestrator(args.data_dir, args.cities, args.force_update, args.workers)
     
-    # Klasyfikacja kroków: True = globalny, False = per-miasto
     pipeline = [
         (0, "scripts/pipeline/00_init_environment.py", True),
-        (1, "scripts/pipeline/01_fetch_gtfs.py", True), # GTFS fetcher sam jest wielowątkowy
-        (2, "scripts/pipeline/02_collect_stops.py", True), # Przetwarza wszystkie na raz
+        (1, "scripts/pipeline/01_fetch_gtfs.py", True),
+        (2, "scripts/pipeline/02_collect_stops.py", False),
         (3, "scripts/pipeline/03_download_osm_pbf.py", True),
         (4, "scripts/pipeline/04_download_population.py", True),
-        (5, "scripts/pipeline/05_extract_infrastructure.py", False), # CIĘŻKIE - OSM Scalpel
+        (5, "scripts/pipeline/05_extract_infrastructure.py", True),
         (6, "scripts/pipeline/06_identify_rcn_teryt.py", True),
-        (7, "scripts/pipeline/07_harvest_rcn_omnibus.py", True), # GLOBALNY CACHE I DYSTRYBUCJA
-        (8, "scripts/pipeline/08_fix_relational_data.py", False),
-        (9, "scripts/pipeline/09_fix_suwalki_geometry.py", False),
+        (7, "scripts/pipeline/07_harvest_rcn_omnibus.py", True),
+        # POPRAWKA P1-2: Krok 08 usuniety (dead code -- czytal z nieistniejacej sciezki rcn/)
+        # (8, "scripts/pipeline/08_fix_relational_data.py", False),
+        (9, "scripts/pipeline/09_fix_suwalki_geometry.py", True),   # POPRAWKA P1-4: Global zamiast 29x parallel
         (10, "scripts/pipeline/10_unify_schemas.py", False),
         (11, "scripts/pipeline/11_build_master_db.py", True),
         (12, "scripts/pipeline/12_audit_data_quality.py", False),
@@ -181,7 +237,7 @@ def main():
         (14, "scripts/pipeline/14_build_isc_valuation.py", False)
     ]
 
-    orch.logger.info("=== URUCHAMIANIE TURBO ORKIESTRATORA 2.0 ===")
+    orch.logger.info("=== PANCERNY ORKIESTRATOR 3.1 - SYSTEM TRANSPARENTNY ===")
     
     for num, script, is_global in pipeline:
         if args.step is not None and args.step != num:
@@ -194,10 +250,10 @@ def main():
             success = orch.run_city_parallel_step(f"step_{num:02d}", script)
             
         if not success and args.step is None:
-            orch.logger.error(f"KRYTYCZNY PRZESTÓJ na kroku {num}. Popraw błędy i wznów.")
+            orch.logger.error(f"ZATRZYMANO POTOK na kroku {num}. Sprawdź logi powyżej.")
             sys.exit(1)
 
-    orch.logger.info("\n=== POTOK ZAKOŃCZONY SUKCESEM DLA WSZYSTKICH MIAST ===")
+    orch.logger.info("\n=== POTOK ZAKOŃCZONY SUKCESEM. DANE SĄ GOTOWE DO ANALIZY. ===")
 
 if __name__ == "__main__":
     main()

@@ -3,39 +3,30 @@ import pandas as pd
 from lxml import etree
 from pathlib import Path
 import os
-import sys
+import argparse
+import json
 from shapely.geometry import Point, Polygon
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
 
-def get_allowed_cities():
-    cities_env = os.environ.get("PIPELINE_CITIES")
-    if cities_env:
-        return [c.strip() for c in cities_env.split(',')]
-    return None
-
 def clean_ref(ref):
     if not ref: return None
     return ref.split('/')[-1].replace('#', '')
 
-def fix_suwalki_centroid():
-    allowed_cities = get_allowed_cities()
-    if allowed_cities and "suwalki" not in allowed_cities:
-        return
+def fix_suwalki_centroid(city_name, data_dir, force):
+    if city_name.lower() != "suwalki":
+        print(f"__PIPELINE_METRICS__={json.dumps({'city': city_name, 'status': 'skipped'})}")
+        return True
 
-    print("--- FIXING SUWAŁKI: STREAMING PARSER & M2 MAPPING ---")
-    data_dir = get_data_dir().resolve()
     city_dir = data_dir / "cities" / "suwalki" / "rcn"
-    
     gml_files = list(city_dir.glob("**/*.gml"))
+    
     if not gml_files:
-        print(f"  [SKIP] Brak plików GML dla Suwałk w {city_dir}")
-        return
+        print(f"__PIPELINE_METRICS__={json.dumps({'city': city_name, 'status': 'no_gml'})}")
+        return True
 
     gml_path = gml_files[0]
-    print(f"  Przetwarzanie strumieniowe pliku: {gml_path.name}")
-
     ns = {
         'rcn': 'urn:gugik:specyfikacje:gmlas:rejestrcennieruchomosci:1.0',
         'gml': 'http://www.opengis.net/gml/3.2',
@@ -48,7 +39,6 @@ def fix_suwalki_centroid():
     niers = {}
     transactions = []
 
-    # STREAMING PARSE: Zapobiega wyciekom pamięci i przyspiesza proces
     context = etree.iterparse(str(gml_path), events=('end',), tag=(
         '{urn:gugik:specyfikacje:gmlas:rejestrcennieruchomosci:1.0}RCN_Budynek',
         '{urn:gugik:specyfikacje:gmlas:rejestrcennieruchomosci:1.0}RCN_Dzialka',
@@ -103,9 +93,6 @@ def fix_suwalki_centroid():
         while elem.getprevious() is not None:
             del elem.getparent()[0]
 
-    print(f"  Wstępnie zmapowano {len(geo_map)} obiektów i {len(transactions)} transakcji.")
-
-    # 2. ŁĄCZENIE DANYCH
     final_features = []
     for t in transactions:
         final_date = docs.get(t['doc_id'])
@@ -131,14 +118,27 @@ def fix_suwalki_centroid():
         out_file = data_dir / "cities" / "suwalki" / "02_spatial" / "transactions.gpkg"
         out_file.parent.mkdir(parents=True, exist_ok=True)
         
-        # KOREKTA: Twarde nadpisywanie. Żadnego append, które niszczyło bazę.
-        if out_file.exists():
+        if out_file.exists() and force:
             os.remove(out_file)
             
         gdf.to_file(out_file, driver="GPKG", layer="transactions")
-        print(f"  [SUKCES] Zapisano {len(gdf)} rekordów dla Suwałk w 02_spatial.")
-    else:
-        print("  [UWAGA] Brak kompletnych transakcji do zapisu.")
+        
+        metrics = {"city": city_name, "status": "fixed", "recovered": len(gdf)}
+        print(f"__PIPELINE_METRICS__={json.dumps(metrics)}")
+        return True
+    
+    print(f"__PIPELINE_METRICS__={json.dumps({'city': city_name, 'status': 'no_data'})}")
+    return False
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--city", help="Miasto (ignorowane, zawsze suwalki)")
+    parser.add_argument("--force", action="store_true")
+    args = parser.parse_args()
+
+    data_dir = get_data_dir()
+    # POPRAWKA P1-4: Krok 09 jest teraz globalny -- zawsze operuje na suwalki
+    fix_suwalki_centroid("suwalki", data_dir, args.force)
 
 if __name__ == "__main__":
-    fix_suwalki_centroid()
+    main()

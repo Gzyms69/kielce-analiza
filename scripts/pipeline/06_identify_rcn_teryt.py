@@ -12,11 +12,12 @@ def get_allowed_cities():
         return [c.strip() for c in cities_env.split(',')]
     return None
 
-POWIATY_PATH = get_data_dir() / "poland" / "admin" / "powiaty.json"
-CITIES_ROOT = get_data_dir() / "cities"
+# POPRAWKA P2-7: Przeniesione z poziomu modulu do wnetrza funkcji
 
 def identify_targets():
     print("=== IDENTYFIKACJA POWIATÓW DLA RCN (Spatial Join) ===")
+    POWIATY_PATH = get_data_dir() / "poland" / "admin" / "powiaty.json"
+    CITIES_ROOT = get_data_dir() / "cities"
     
     if not POWIATY_PATH.exists():
         print(f"BŁĄD: Nie znaleziono pliku {POWIATY_PATH}")

@@ -2,80 +2,103 @@ import geopandas as gpd
 import pandas as pd
 from pathlib import Path
 import os
+import argparse
+import json
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
 
-def get_allowed_cities():
-    cities_env = os.environ.get("PIPELINE_CITIES")
-    if cities_env:
-        return [c.strip() for c in cities_env.split(',')]
-    return None
-
 def permanent_unify_city(city_name, data_dir):
-    # KOREKTA: Zawsze szukamy w 02_spatial (standard Hub 2.0)
     rcn_path = data_dir / "cities" / city_name / "02_spatial" / "transactions.gpkg"
     
     if not rcn_path.exists():
-        # Fallback dla starszych testów
-        rcn_path = data_dir / "cities" / city_name / "rcn" / "transactions.gpkg"
-        
-    if not rcn_path.exists():
-        print(f"    [SKIP] Nie znaleziono bazy transakcji dla {city_name} (szukano w 02_spatial i rcn/)")
+        print(f"    [SKIP] Nie znaleziono bazy transakcji dla {city_name}.")
         return False
     
-    print(f"  Unifying {city_name} ({rcn_path.relative_to(data_dir)})...")
     try:
         rcn = gpd.read_file(rcn_path)
         if rcn.empty:
             print("    [EMPTY] Baza jest pusta.")
             return True
             
-        # 1. Ensure lok_pow_uzyt exists
         mapped = False
         if 'lok_pow_uzyt' not in rcn.columns:
-            # Mapujemy wszystkie znane nazwy kolumn powierzchniowych na nasz standard
             for col in ['pow_uzytkowa', 'pow_lokalu', 'nier_pow_uzyt', 'm2', 'powUzytkowaLokalu']:
                 if col in rcn.columns:
                     rcn['lok_pow_uzyt'] = rcn[col]
-                    print(f"    [MAP] Mapowanie kolumny {col} -> lok_pow_uzyt")
                     mapped = True
                     break
         else:
             mapped = True
         
         if not mapped:
-            print(f"    [ERR] Brak kolumny powierzchniowej w {city_name}. Kolumny: {rcn.columns.tolist()}")
+            print(f"    [ERR] Brak kolumny powierzchniowej w {city_name}.")
             return False
 
-        # 2. Convert to Numeric
         rcn['tran_cena_brutto'] = pd.to_numeric(rcn['tran_cena_brutto'], errors='coerce')
         rcn['lok_pow_uzyt'] = pd.to_numeric(rcn['lok_pow_uzyt'], errors='coerce')
         
-        # 3. Calculate price_m2 (VECTORIZED)
         mask = (rcn['lok_pow_uzyt'] > 5) & (rcn['tran_cena_brutto'] > 0)
-        rcn['price_m2'] = None
+        rcn['price_m2'] = pd.NA # Inicjalizacja jako NA (numeric-friendly)
         rcn.loc[mask, 'price_m2'] = rcn.loc[mask, 'tran_cena_brutto'] / rcn.loc[mask, 'lok_pow_uzyt']
         
-        # 4. Save back
+        # KRYTYCZNA POPRAWKA: Wymuszamy typ numeryczny (float) przed zapisem
+        rcn['price_m2'] = pd.to_numeric(rcn['price_m2'], errors='coerce')
+        valid_prices = rcn.loc[rcn['price_m2'].notna(), 'price_m2']
+        
+        avg_price = 0
+        median_price = 0
+        
+        if not valid_prices.empty:
+            # 1. Obliczamy twardą medianę z całości
+            median_price = valid_prices.median()
+            
+            # 2. Dynamiczny Filtr Outlierów v7.8:
+            # Usuwamy tylko absolutne absurdy (np. błędy urzędnika rzędu milionów/miliardów zł/m2)
+            # Dopuszczamy ceny do 30-krotności mediany (np. 10k * 30 = 300k/m2)
+            # Pozwala to zachować 100% luksusowych dzielnic przy jednoczesnym usunięciu śmieci.
+            max_allowed = median_price * 30
+            min_allowed = 500 # Poniżej 500 PLN/m2 to zazwyczaj błędy lub darowizny
+            
+            trimmed_prices = valid_prices[(valid_prices >= min_allowed) & (valid_prices <= max_allowed)]
+            avg_price = trimmed_prices.mean()
+        
         rcn.to_file(rcn_path, driver="GPKG", layer="transactions")
-        print(f"    [OK] Zapisano price_m2 dla {len(rcn[mask])} rekordów.")
+        
+        # POPRAWKA P2-3: Zapis zagregowanych statystyk do osobnego pliku
+        stats_path = rcn_path.parent / "rcn_stats.json"
+        with open(stats_path, "w", encoding="utf-8") as f:
+            json.dump({
+                "city": city_name,
+                "total": len(rcn),
+                "valid": len(valid_prices),
+                "median_price_m2": round(median_price, 2),
+                "trimmed_mean_m2": round(avg_price, 2),
+                "min_valid": round(min_allowed, 2) if not valid_prices.empty else 0,
+                "max_allowed": round(max_allowed, 2) if not valid_prices.empty else 0
+            }, f, indent=2)
+        
+        metrics = {
+            "city": city_name,
+            "trans_total": len(rcn),
+            "trans_valid": len(valid_prices),
+            "avg_price_m2": round(avg_price, 0),
+            "median_price_m2": round(median_price, 0)
+        }
+        print(f"__PIPELINE_METRICS__={json.dumps(metrics)}")
         return True
     except Exception as e:
-        print(f"    Error in {city_name}: {e}")
+        print(f"    [ERR] {city_name}: {e}")
         return False
 
-if __name__ == "__main__":
-    print("=== TASK 1.7: PERMANENT LOCAL SCHEMA UNIFICATION ===\n")
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--city", help="Miasto do unifikacji", required=True)
+    parser.add_argument("--force", action="store_true")
+    args = parser.parse_args()
+
     data_dir = get_data_dir()
-    allowed_cities = get_allowed_cities()
-    
-    cities_root = data_dir / "cities"
-    if not cities_root.exists(): exit(0)
-    
-    cities = sorted([d.name for d in cities_root.iterdir() if d.is_dir()])
-    for city in cities:
-        if allowed_cities and city not in allowed_cities:
-            continue
-        permanent_unify_city(city, data_dir)
-    print("\nLocal schemas hardened and unified.")
+    permanent_unify_city(args.city, data_dir)
+
+if __name__ == "__main__":
+    main()
