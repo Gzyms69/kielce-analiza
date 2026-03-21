@@ -11,7 +11,7 @@ import re
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 WFS_URL = "https://mapy.geoportal.gov.pl/wss/service/rcn"
-DATE_START = "2025-01-01"
+DATE_START = "2020-01-01"
 PAGE_SIZE = 5000
 
 def get_data_dir():
