@@ -1,0 +1,2 @@
+
+Sukces! Statystyki POI zapisane w: data/processed/national_poi_stats.json

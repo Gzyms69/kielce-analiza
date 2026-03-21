@@ -1,0 +1,614 @@
+==========================================================================================
+   NATIONAL TRANSIT & REAL ESTATE DNA - FULL SYSTEM AUDIT (v8.8)
+   Generated: 20260321_0154
+==========================================================================================
+
+
+[AGLOMERACJA: BIALYSTOK]
+------------------------------------------------------------------------------------------
+Populacja: 383,482 | Mediana RCN: 8,900 PLN/m2 | Transakcje: 5391
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  |  H. Sienkiewicza/Rzeka Biała DP     | 0.98   | 25231  | 8900     | 364.2
+2    | A  | Gen. Hallera/Brzozowa(042)          | 0.98   | 24997  | 8900     | 282.7
+2    | A  | Gen. Hallera/Brzozowa (042)         | 0.98   | 24997  | 8900     | 282.7
+4    | A  | Białystok, Kawaleryjska/Zapiecek    | 0.98   | 27307  | 8900     | 372.6
+5    | A  |  al. Piłsudskiego/Rzeka Biała DP    | 0.97   | 16410  | 8900     | 381.4
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+2770 | F  | Niewodnica Nargilewska (956)        | 0.23   | 10     | 8900     | 0.0  
+2769 | F  | Borsukówka                          | 0.23   | 24     | 8900     | 0.0  
+2768 | F  | Fasty                               | 0.23   | 116    | 8900     | 0.0  
+2767 | F  | Lewickie                            | 0.23   | 118    | 8900     | 0.0  
+2766 | F  | Henrykowo/Jubilerska (1975)         | 0.23   | 152    | 8900     | 0.0  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: BYDGOSZCZ]
+------------------------------------------------------------------------------------------
+Populacja: 403,938 | Mediana RCN: 5,102 PLN/m2 | Transakcje: 2565
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Skłodowskiej Curie - Bałtycka       | 0.98   | 10201  | 5102     | 110.0
+2    | A  | Skłodowskiej Curie - Bałtycka       | 0.98   | 10659  | 5102     | 97.2 
+3    | A  | Gdańska - Cieszkowskiego            | 0.98   | 10579  | 5102     | 155.9
+4    | A  | Szubińska - Żwirki i Wigury         | 0.98   | 10006  | 5102     | 164.6
+5    | A  | Skłodowskiej Curie - Gajowa         | 0.97   | 8340   | 5102     | 110.6
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+1220 | F  | Trzęsacz Dolny                      | 0.25   | 42     | 5102     | 1.0  
+1219 | F  | Strzelce Dolne III                  | 0.25   | 48     | 5102     | 1.0  
+1218 | F  | Wudzyn I                            | 0.25   | 78     | 5102     | 0.7  
+1217 | F  | Wudzyn I                            | 0.25   | 79     | 5102     | 0.7  
+1216 | F  | Strzelce Dolne I                    | 0.25   | 54     | 5102     | 1.0  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: CZESTOCHOWA]
+------------------------------------------------------------------------------------------
+Populacja: 240,937 | Mediana RCN: 6,712 PLN/m2 | Transakcje: 2225
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Estakada                            | 0.98   | 11604  | 6712     | 68.0 
+2    | A  | II Aleja Najświętszej Maryi Panny   | 0.97   | 6431   | 6712     | 104.3
+3    | A  | D. H. Centrum                       | 0.97   | 6423   | 6712     | 70.5 
+4    | A  | PLAC Biegańskiego                   | 0.97   | 7039   | 6712     | 67.7 
+5    | A  | PLAC Biegańskiego                   | 0.97   | 7781   | 6712     | 55.7 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+899  | F  | Wodociągowa                         | 0.24   | 41     | 6712     | 0.8  
+898  | F  | Kusięta LAS                         | 0.24   | 132    | 6712     | 0.0  
+897  | F  | Kusięta Przejazd Kolejowy           | 0.24   | 146    | 6712     | 0.0  
+896  | F  | Gąszczyk                            | 0.25   | 96     | 6712     | 1.5  
+895  | F  | Gąszczyk                            | 0.25   | 122    | 6712     | 1.5  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: ELBLAG]
+------------------------------------------------------------------------------------------
+Populacja: 119,411 | Mediana RCN: 6,783 PLN/m2 | Transakcje: 2931
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Płk. Dąbka                          | 0.97   | 10655  | 6783     | 37.4 
+2    | A  | Płk. Dąbka                          | 0.97   | 10635  | 6783     | 37.0 
+3    | A  | 12 Lutego                           | 0.97   | 9757   | 6783     | 50.2 
+4    | A  | 12 Lutego                           | 0.97   | 10075  | 6783     | 50.2 
+5    | A  | 1-go Maja - Sąd                     | 0.96   | 9785   | 6783     | 40.3 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+364  | F  | Jagodnik                            | 0.26   | 35     | 6783     | 1.9  
+363  | F  | Piastowo I                          | 0.27   | 74     | 6783     | 1.9  
+362  | F  | Milejewo - Cmentarz                 | 0.27   | 87     | 6783     | 0.5  
+361  | F  | Jagodnik                            | 0.27   | 22     | 6783     | 2.0  
+360  | F  | Milejewo - Lecznica                 | 0.27   | 27     | 6783     | 0.5  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: ELK]
+------------------------------------------------------------------------------------------
+Populacja: 72,490 | Mediana RCN: 5,034 PLN/m2 | Transakcje: 1527
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Armii Krajowej — Poczta             | 0.97   | 11255  | 5034     | 89.7 
+2    | A  | Armii Krajowej — Szkoła Artystyczna | 0.97   | 10381  | 5034     | 89.3 
+3    | A  | Armii Krajowej — Mechaniak          | 0.96   | 9690   | 5034     | 89.7 
+4    | A  | Wojska Polskiego — Kościół          | 0.96   | 7300   | 5034     | 114.0
+5    | A  | Wojska Polskiego — ECK              | 0.96   | 6841   | 5034     | 114.3
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+319  | F  | Buczki                              | 0.26   | 0      | 5034     | 0.0  
+319  | F  | Buczki                              | 0.26   | 0      | 5034     | 0.0  
+318  | F  | Bajtkowo                            | 0.27   | 7      | 5034     | 0.0  
+317  | F  | Krokocie                            | 0.29   | 5      | 5034     | 2.0  
+316  | F  | Janisze — Zalesie                   | 0.30   | 14     | 5034     | 1.5  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: GIZYCKO]
+------------------------------------------------------------------------------------------
+Populacja: 35,698 | Mediana RCN: 4,512 PLN/m2 | Transakcje: 235
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Warszawska — Kościół Ewangelicki    | 0.97   | 5344   | 4512     | 6.2  
+2    | A  | Warszawska — Wieża Ciśnień          | 0.97   | 5042   | 4512     | 5.0  
+3    | A  | Warszawska — Park                   | 0.97   | 4693   | 4512     | 5.0  
+4    | A  | Warszawska — Sąd Rejonowy           | 0.97   | 4550   | 4512     | 6.0  
+5    | A  | Warszawska — Gimnazjum              | 0.96   | 4990   | 4512     | 7.0  
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+143  | F  | Bogacko Tartak                      | 0.29   | 22     | 4512     | 0.1  
+142  | F  | Bogacko Kol.                        | 0.30   | 23     | 4512     | 0.1  
+141  | F  | Kożuchy Kolonia                     | 0.30   | 30     | 4512     | 0.1  
+140  | F  | Kożuchy Kolonia                     | 0.30   | 30     | 4512     | 0.1  
+139  | F  | Guty                                | 0.30   | 31     | 4512     | 0.1  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: GORZOW]
+------------------------------------------------------------------------------------------
+Populacja: 129,431 | Mediana RCN: 6,821 PLN/m2 | Transakcje: 2733
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Kombatantów                         | 0.96   | 16853  | 6821     | 163.2
+1    | A  | Kombatantów                         | 0.96   | 16853  | 6821     | 163.2
+3    | A  | Matejki                             | 0.96   | 14047  | 6821     | 252.7
+3    | A  | Matejki                             | 0.96   | 14047  | 6821     | 252.7
+5    | A  | Kombatantów                         | 0.96   | 17744  | 6821     | 148.0
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+862  | F  | Chróścik INNEKO                     | 0.24   | 0      | 6821     | 1.3  
+862  | F  | Chróścik INNEKO                     | 0.24   | 0      | 6821     | 1.3  
+860  | F  | Czechów SARRIS DARM                 | 0.24   | 304    | 6821     | 0.8  
+860  | F  | Czechów SARRIS DARM                 | 0.24   | 304    | 6821     | 0.8  
+858  | F  | Czechów SARRIS DARM                 | 0.24   | 313    | 6821     | 0.8  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: GZM]
+------------------------------------------------------------------------------------------
+Populacja: 3,664,676 | Mediana RCN: 7,640 PLN/m2 | Transakcje: 50220
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Katowice                            | 1.00   | 21115  | 7640     | 364.2
+2    | A  | Katowice                            | 1.00   | 21115  | 7640     | 364.2
+3    | A  | Katowice                            | 1.00   | 21115  | 7640     | 364.2
+4    | A  | Radlin Korfantego Centrum           | 1.00   | 14403  | 7640     | 325.1
+5    | A  | Śródmieście Kampus                  | 0.99   | 14403  | 7640     | 325.1
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+10412 | F  | Skalite Pod Polanou                 | 0.22   | 0      | 7640     | 0.0  
+10412 | F  | Skalite                             | 0.22   | 0      | 7640     | 0.0  
+10411 | F  | Tworków                             | 0.22   | 1      | 7640     | 0.0  
+10410 | F  | Laliki                              | 0.22   | 47     | 7640     | 0.0  
+10408 | F  | Drogomyśl                           | 0.23   | 62     | 7640     | 0.0  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: KIELCE]
+------------------------------------------------------------------------------------------
+Populacja: 287,314 | Mediana RCN: 8,366 PLN/m2 | Transakcje: 3137
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Grunwaldzka / Jagiellońska          | 0.99   | 8572   | 8366     | 481.8
+2    | A  | Tarnowska                           | 0.99   | 7251   | 8366     | 244.0
+3    | A  | Źródłowa                            | 0.98   | 7547   | 8366     | 231.8
+4    | A  | Tarnowska                           | 0.98   | 6927   | 8366     | 213.6
+5    | A  | Plac Targowy                        | 0.98   | 6774   | 8366     | 188.2
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+1357 | F  | Kostomłoty                          | 0.22   | 0      | 8366     | 0.0  
+1355 | F  | Dębska Wola I                       | 0.23   | 0      | 8366     | 1.1  
+1355 | F  | Dębska Wola I                       | 0.23   | 0      | 8366     | 1.1  
+1354 | F  | Łubno                               | 0.24   | 5      | 8366     | 1.1  
+1353 | F  | Dolina Marczakowa                   | 0.24   | 22     | 8366     | 1.1  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: KRAKOW]
+------------------------------------------------------------------------------------------
+Populacja: 1,126,209 | Mediana RCN: 13,226 PLN/m2 | Transakcje: 20125
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Urzędnicza                          | 0.98   | 11653  | 13226    | 160.6
+2    | A  | Os. Piastów                         | 0.98   | 11255  | 13226    | 153.3
+3    | A  | Biprostal                           | 0.98   | 11071  | 13226    | 160.9
+4    | A  | Nowy Kleparz                        | 0.98   | 7248   | 13226    | 370.4
+5    | A  | Urzędnicza                          | 0.97   | 11614  | 13226    | 160.6
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+4259 | F  | Balice Airport                      | 0.24   | 0      | 13226    | 0.0  
+4258 | F  | Rudawa 21 Lipca                     | 0.24   | 154    | 13226    | 0.0  
+4257 | F  | Mników Granica                      | 0.24   | 105    | 13226    | 1.6  
+4256 | F  | Niedźwiedź PKP                      | 0.24   | 57     | 13226    | 2.5  
+4255 | F  | Marszowice Góry                     | 0.24   | 59     | 13226    | 2.5  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: KUTNO]
+------------------------------------------------------------------------------------------
+Populacja: 47,419 | Mediana RCN: 6,579 PLN/m2 | Transakcje: 437
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Barlickiego                         | 0.99   | 7533   | 6579     | 43.4 
+2    | A  | Jana Pawła II                       | 0.98   | 7574   | 6579     | 62.2 
+3    | A  | Barlickiego                         | 0.98   | 7546   | 6579     | 43.4 
+4    | A  | Wyszyńskiego                        | 0.98   | 7838   | 6579     | 54.1 
+5    | A  | Jana Pawła II                       | 0.98   | 7459   | 6579     | 59.6 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+226  | F  | Metalowa / Ciepłownia               | 0.24   | 0      | 6579     | 0.9  
+225  | F  | Metalowa / Ciepłownia               | 0.25   | 0      | 6579     | 1.1  
+224  | F  | Stalowa / Pętla                     | 0.26   | 12     | 6579     | 1.5  
+223  | F  | Oczyszczalnia                       | 0.26   | 4      | 6579     | 1.7  
+222  | F  | Oczyszczalnia                       | 0.27   | 4      | 6579     | 1.7  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: LEGNICA]
+------------------------------------------------------------------------------------------
+Populacja: 115,261 | Mediana RCN: 6,051 PLN/m2 | Transakcje: 3221
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Piłsudskiego - Heweliusza           | 0.99   | 8519   | 6051     | 101.5
+2    | A  | Piłsudskiego - Galaktyczna          | 0.98   | 8257   | 6051     | 100.6
+3    | A  | Skarbka - Pl. Słowiański            | 0.98   | 9513   | 6051     | 85.4 
+4    | A  | Skarbka - Mickiewicza               | 0.98   | 8995   | 6051     | 86.0 
+5    | A  | Piłsudskiego - Miarki               | 0.96   | 6900   | 6051     | 101.5
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+365  | F  | Gromadzyń - Pętla                   | 0.26   | 90     | 6051     | 0.7  
+364  | F  | Legnica Strefa                      | 0.29   | 0      | 6051     | 0.0  
+363  | F  | Czarnków - Nr 2                     | 0.29   | 19     | 6051     | 1.4  
+362  | F  | Bieniowice - Nr 75                  | 0.29   | 98     | 6051     | 1.3  
+361  | F  | Biskupice - Nr 9                    | 0.29   | 51     | 6051     | 1.4  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: LESZNO]
+------------------------------------------------------------------------------------------
+Populacja: 81,945 | Mediana RCN: 5,770 PLN/m2 | Transakcje: 1491
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Dąbrowskiego                        | 0.98   | 8478   | 5770     | 50.0 
+2    | A  | Krasińskiego                        | 0.98   | 5583   | 5770     | 42.4 
+3    | A  | Dąbrowskiego                        | 0.98   | 8571   | 5770     | 48.6 
+4    | A  | Krasińskiego                        | 0.98   | 5242   | 5770     | 42.0 
+5    | A  | Jana Pawła II pływalnia             | 0.96   | 8901   | 5770     | 31.3 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+286  | F  | Kosmonautów                         | 0.23   | 0      | 5770     | 0.9  
+286  | F  | Kosmonautów                         | 0.23   | 0      | 5770     | 0.9  
+285  | F  | Karolewko                           | 0.25   | 25     | 5770     | 1.5  
+284  | F  | Ratowice II                         | 0.25   | 54     | 5770     | 1.5  
+283  | F  | Karolewko Mórkowska                 | 0.25   | 68     | 5770     | 1.5  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: LODZ]
+------------------------------------------------------------------------------------------
+Populacja: 1,041,306 | Mediana RCN: 6,690 PLN/m2 | Transakcje: 3191
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Felińskiego-Konspiracyjnego WP      | 0.99   | 14828  | 6690     | 182.6
+2    | A  | Wyszyńskiego-Armii Krajowej         | 0.99   | 13430  | 6690     | 197.6
+3    | A  | Wyszyńskiego-Armii Krajowej         | 0.99   | 13444  | 6690     | 197.4
+4    | A  | Przybyszewskiego-Tatrzańska         | 0.98   | 9451   | 6690     | 248.8
+5    | A  | Wyszyńskiego-Retkińska              | 0.98   | 13260  | 6690     | 197.6
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+3073 | F  | Gawrony przystanek autobusowy DK 60 | 0.23   | 47     | 6690     | 0.0  
+3072 | F  | Lubocha II                          | 0.23   | 3      | 6690     | 0.4  
+3071 | F  | Bardzynin                           | 0.23   | 4      | 6690     | 0.4  
+3070 | F  | Huta Bardzyńska                     | 0.23   | 10     | 6690     | 0.4  
+3069 | F  | Gajówka - Parcel                    | 0.23   | 32     | 6690     | 0.4  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: LOMZA]
+------------------------------------------------------------------------------------------
+Populacja: 65,199 | Mediana RCN: 7,117 PLN/m2 | Transakcje: 698
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Plac Kościuszki — Jantar            | 0.95   | 5751   | 7117     | 48.8 
+2    | A  | Aleja Legionów — Kontakty           | 0.94   | 6148   | 7117     | 27.5 
+3    | A  | Aleja Piłsudzkiego — Staffa         | 0.94   | 12297  | 7117     | 22.7 
+4    | A  | Giełczyńska — Muzeum                | 0.94   | 4383   | 7117     | 42.4 
+5    | A  | Aleja Legionów — Stary Szpital      | 0.94   | 5717   | 7117     | 32.2 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+177  | F  | Kraska 77                           | 0.27   | 399    | 7117     | 0.5  
+176  | F  | Poligonowa — UniGlass               | 0.27   | 118    | 7117     | 0.2  
+175  | F  | Kraska DHL                          | 0.27   | 375    | 7117     | 0.5  
+174  | F  | Poligonowa — Poznańska              | 0.27   | 130    | 7117     | 0.1  
+173  | F  | Szosa do Mężenia — Działki          | 0.30   | 212    | 7117     | 1.8  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: LUBLIN]
+------------------------------------------------------------------------------------------
+Populacja: 446,126 | Mediana RCN: 9,585 PLN/m2 | Transakcje: 6180
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Lipowa - cmentarz                   | 0.98   | 6000   | 9585     | 311.4
+2    | A  | Lipowa - cmentarz                   | 0.97   | 5828   | 9585     | 318.4
+3    | A  | ZUS                                 | 0.97   | 6930   | 9585     | 245.8
+4    | A  | Żelazowej Woli                      | 0.97   | 8381   | 9585     | 216.2
+5    | A  | Zana Leclerc                        | 0.97   | 7519   | 9585     | 245.5
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+1314 | F  | Radawiec Duży - lotnisko NŻ         | 0.23   | 58     | 9585     | 0.6  
+1313 | F  | Radawiec Duży - lotnisko NŻ         | 0.23   | 62     | 9585     | 0.6  
+1312 | F  | Majdan Krasieniński - sklep         | 0.24   | 67     | 9585     | 0.8  
+1311 | F  | Kawka - szklarnia NŻ                | 0.24   | 24     | 9585     | 1.4  
+1310 | F  | Kawka - szklarnia NŻ                | 0.24   | 24     | 9585     | 1.4  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: OLSZTYN]
+------------------------------------------------------------------------------------------
+Populacja: 238,431 | Mediana RCN: 8,421 PLN/m2 | Transakcje: 4659
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Wiadukt Powstańców Węgierskich 1956 | 0.99   | 10150  | 8421     | 137.2
+2    | A  | Limanowskiego (Limanowskiego)       | 0.97   | 10684  | 8421     | 137.2
+3    | A  | Limanowskiego (Limanowskiego)       | 0.97   | 10800  | 8421     | 136.5
+4    | A  | D.H. Śliwa (Wilczyńskiego)          | 0.97   | 11458  | 8421     | 129.3
+5    | A  | D.H. Śliwa (Wilczyńskiego)          | 0.97   | 11263  | 8421     | 128.4
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+862  | F  | Bartąg-Kolonia (Bartąg-Kolonia)     | 0.27   | 0      | 8421     | 0.0  
+862  | F  | Bartąg-Kolonia (Bartąg-Kolonia)     | 0.27   | 0      | 8421     | 0.0  
+860  | F  | Dorotowo-Kepijko (Dorotowo)         | 0.27   | 1      | 8421     | 0.0  
+860  | F  | Dorotowo-Kepijko (Dorotowo)         | 0.27   | 1      | 8421     | 0.0  
+858  | F  | Nowe Włóki kolonia 2 (Nowe Włóki)   | 0.28   | 6      | 8421     | 0.0  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: OPOLE]
+------------------------------------------------------------------------------------------
+Populacja: 150,715 | Mediana RCN: 8,594 PLN/m2 | Transakcje: 1748
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Plac Kopernika - Uniwersytet (290)  | 0.99   | 6762   | 8594     | 104.7
+2    | A  | Plac Kopernika - Sienkiewicza (287) | 0.98   | 7085   | 8594     | 90.5 
+3    | A  | Sienkiewicza (330)                  | 0.98   | 6740   | 8594     | 90.5 
+4    | A  | Książąt Opolskich - Rondo (170)     | 0.97   | 6224   | 8594     | 90.5 
+5    | A  | Ozimska - Dubois (260)              | 0.97   | 6144   | 8594     | 78.9 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+543  | F  | Oświęcimska - Metalchem III (579)   | 0.25   | 5      | 8594     | 1.3  
+542  | F  | Oświęcimska - Metalchem IV (581)    | 0.25   | 5      | 8594     | 1.3  
+540  | F  | Prószków - Grunwaldzka - Rudnicka ( | 0.25   | 167    | 8594     | 0.6  
+540  | F  | Oświęcimska - Metalchem IV (580)    | 0.25   | 5      | 8594     | 1.7  
+540  | F  | Oświęcimska - Metalchem III (578)   | 0.25   | 5      | 8594     | 1.7  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: POZNAN]
+------------------------------------------------------------------------------------------
+Populacja: 1,361,470 | Mediana RCN: 8,679 PLN/m2 | Transakcje: 20728
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Rynek Łazarski                      | 0.99   | 15006  | 8679     | 287.3
+2    | A  | Rynek Łazarski                      | 0.99   | 14699  | 8679     | 290.9
+3    | A  | Aleje Marcinkowskiego               | 0.99   | 9553   | 8679     | 401.1
+4    | A  | Aleje Marcinkowskiego               | 0.99   | 9422   | 8679     | 374.7
+5    | A  | Park Wilsona                        | 0.98   | 13654  | 8679     | 288.1
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+5650 | F  | Trzykolne Młyny Rogalińska          | 0.24   | 0      | 8679     | 0.0  
+5648 | F  | Pierzchno                           | 0.24   | 11     | 8679     | 0.0  
+5648 | F  | Pierzchno                           | 0.24   | 11     | 8679     | 0.0  
+5647 | F  | Pierzchno                           | 0.24   | 11     | 8679     | 0.0  
+5646 | F  | Pierzchno                           | 0.24   | 11     | 8679     | 0.0  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: PRZEMYSL]
+------------------------------------------------------------------------------------------
+Populacja: 71,214 | Mediana RCN: 6,088 PLN/m2 | Transakcje: 693
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Mickiewicza - Poczta                | 0.98   | 6321   | 6088     | 10.7 
+2    | A  | Słowackiego - Biblioteka            | 0.98   | 6434   | 6088     | 7.9  
+3    | A  | Jagiellońska - PL. Pileckiego - Kie | 0.98   | 5428   | 6088     | 20.7 
+4    | A  | Jagiellońska - PL. RYBI - Kier. Pla | 0.97   | 5448   | 6088     | 20.5 
+5    | A  | Dworskiego - Smolki                 | 0.97   | 6618   | 6088     | 10.5 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+310  | F  | Łętownia Wieś - Kier. Bełwin        | 0.23   | 100    | 6088     | 0.1  
+309  | F  | Łętownia Wieś - Kier. Przemyśl      | 0.23   | 100    | 6088     | 0.1  
+308  | F  | Łętownia N / Ż - Kier. Przemyśl     | 0.25   | 102    | 6088     | 0.1  
+307  | F  | Łętownia N / Ż - Kier. Bełwin       | 0.25   | 102    | 6088     | 0.1  
+306  | F  | Łuczyce II N / Ż - Kier. Rożubowice | 0.27   | 26     | 6088     | 0.4  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: RADOM]
+------------------------------------------------------------------------------------------
+Populacja: 239,185 | Mediana RCN: 6,520 PLN/m2 | Transakcje: 1255
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | 25 Czerwca / Kaufland               | 0.99   | 8378   | 6520     | 166.7
+2    | A  | 25 Czerwca / Skłodowskiej-Curie     | 0.98   | 8660   | 6520     | 138.9
+3    | A  | Sienkiewicza / Katedra              | 0.98   | 7844   | 6520     | 146.5
+4    | A  | Traugutta / Moniuszki               | 0.97   | 7272   | 6520     | 139.2
+5    | A  | 25 Czerwca / Struga                 | 0.97   | 7527   | 6520     | 109.6
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+727  | F  | Małęczyn Stary / Leśna (NŻ)         | 0.22   | 120    | 6520     | 1.1  
+726  | F  | Małęczyn Stary / Leśna (NŻ)         | 0.23   | 119    | 6520     | 1.3  
+725  | F  | Rożki                               | 0.23   | 213    | 6520     | 0.0  
+724  | F  | Rożki I                             | 0.23   | 142    | 6520     | 1.5  
+723  | F  | Rożki I                             | 0.23   | 148    | 6520     | 1.5  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: RZESZOW]
+------------------------------------------------------------------------------------------
+Populacja: 439,622 | Mediana RCN: 8,908 PLN/m2 | Transakcje: 5846
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Pl. Wolności 03                     | 0.99   | 6754   | 8908     | 589.7
+2    | A  | Piłsudskiego U. Wojewódzki 05       | 0.99   | 7279   | 8908     | 759.7
+3    | A  | Rzeszów D.A. 3                      | 0.99   | 11531  | 8908     | 413.5
+4    | A  | Rzeszów D.A. 0                      | 0.99   | 9621   | 8908     | 358.3
+5    | A  | Dąbrowskiego KW. Policji 03         | 0.99   | 10150  | 8908     | 331.8
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+2639 | F  | Kąkolówka Nawsie 02                 | 0.24   | 45     | 8908     | 0.1  
+2638 | F  | Kamień Podlesie Olszyny 07          | 0.24   | 118    | 8908     | 0.0  
+2637 | F  | Harta 54                            | 0.24   | 122    | 8908     | 0.0  
+2636 | F  | Kraczkowa rondo 03 nż               | 0.24   | 126    | 8908     | 0.0  
+2635 | F  | Chmielnik pole 02                   | 0.24   | 43     | 8908     | 0.2  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: SUWALKI]
+------------------------------------------------------------------------------------------
+Populacja: 74,387 | Mediana RCN: 6,894 PLN/m2 | Transakcje: 262
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Noniewicza / Plac M. Konopnickiej ( | 0.98   | 8221   | 6894     | 29.2 
+2    | A  | Noniewicza / Urząd Miejski (03)     | 0.96   | 8101   | 6894     | 19.6 
+3    | A  | Noniewicza / Stokrotka (05)         | 0.96   | 7256   | 6894     | 29.1 
+4    | A  | Waryńskiego / 1 Maja (02)           | 0.96   | 7186   | 6894     | 16.9 
+5    | A  | Noniewicza / Wigry (06)             | 0.95   | 7487   | 6894     | 19.4 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+333  | F  | Biała Woda / Skrzyżowanie 05        | 0.24   | 14     | 6894     | 0.1  
+332  | F  | Płociczno koło Suwałk               | 0.25   | 38     | 6894     | 0.0  
+331  | F  | Biała Woda / Skrzyżowanie 04        | 0.26   | 17     | 6894     | 0.2  
+330  | F  | Sobolewo 03P                        | 0.27   | 45     | 6894     | 0.1  
+329  | F  | Biała Woda 01L                      | 0.28   | 59     | 6894     | 0.1  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: SWINOUJSCIE]
+------------------------------------------------------------------------------------------
+Populacja: 45,308 | Mediana RCN: 16,378 PLN/m2 | Transakcje: 1753
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Plac Wolności                       | 0.97   | 8640   | 16378    | 18.9 
+2    | A  | Matejki / Witosa                    | 0.95   | 11182  | 16378    | 21.0 
+3    | A  | Grunwaldzka / Łużycka               | 0.95   | 6192   | 16378    | 25.2 
+4    | A  | Grunwaldzka / Karsiborska           | 0.95   | 6292   | 16378    | 24.9 
+5    | A  | Plac Kościelny                      | 0.94   | 9015   | 16378    | 15.9 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+208  | F  | Świnoujście Przytór                 | 0.23   | 8      | 16378    | 0.0  
+207  | F  | Wolińska - Przystań Żeglarska       | 0.24   | 0      | 16378    | 1.7  
+206  | F  | Wolińska - Przystań Żeglarska       | 0.26   | 0      | 16378    | 1.9  
+205  | F  | Lubiewo                             | 0.26   | 0      | 16378    | 1.7  
+204  | F  | Lubiewo                             | 0.28   | 0      | 16378    | 1.9  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: SZCZECIN]
+------------------------------------------------------------------------------------------
+Populacja: 511,323 | Mediana RCN: 7,936 PLN/m2 | Transakcje: 5950
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Kołłątaja 32                        | 0.99   | 10785  | 7936     | 159.5
+2    | A  | Plac Zwycięstwa 21                  | 0.99   | 12694  | 7936     | 191.9
+3    | A  | Kołłątaja 31                        | 0.98   | 11044  | 7936     | 129.7
+4    | A  | Niemcewicza 21                      | 0.98   | 14193  | 7936     | 169.9
+5    | A  | Niemcewicza 22                      | 0.98   | 14099  | 7936     | 245.6
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+1785 | F  | Grambow                             | 0.22   | 0      | 7936     | 0.0  
+1784 | F  | Bolesławice                         | 0.24   | 7      | 7936     | 0.2  
+1782 | F  | Bolesławice                         | 0.25   | 7      | 7936     | 0.4  
+1782 | F  | Kamionki nż 11                      | 0.25   | 7      | 7936     | 0.6  
+1781 | F  | Kamionki nż 12                      | 0.25   | 3      | 7936     | 1.1  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: TORUN]
+------------------------------------------------------------------------------------------
+Populacja: 255,210 | Mediana RCN: 8,195 PLN/m2 | Transakcje: 3978
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Ślaskiego                           | 0.99   | 10857  | 8195     | 57.0 
+2    | A  | Ślaskiego                           | 0.98   | 10651  | 8195     | 56.3 
+3    | A  | Manhattan                           | 0.98   | 10569  | 8195     | 90.3 
+4    | A  | Wyszyńskiego                        | 0.98   | 10461  | 8195     | 56.9 
+5    | A  | Wyszyńskiego                        | 0.98   | 9664   | 8195     | 79.6 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+914  | F  | Kazimierzewo                        | 0.24   | 48     | 8195     | 0.1  
+913  | F  | Bartoszewo                          | 0.24   | 49     | 8195     | 0.1  
+912  | F  | Zębowo III                          | 0.24   | 50     | 8195     | 0.1  
+911  | F  | Młyniec I - Żwirownia               | 0.24   | 21     | 8195     | 0.2  
+910  | F  | Dobrzejewice - Cmentarz             | 0.24   | 52     | 8195     | 0.1  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: TROJMIASTO]
+------------------------------------------------------------------------------------------
+Populacja: 1,057,375 | Mediana RCN: 11,308 PLN/m2 | Transakcje: 26367
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Jaśkowa Dolina 02                   | 0.98   | 17611  | 11308    | 1221.1
+1    | A  | Jaśkowa Dolina 02                   | 0.98   | 17611  | 11308    | 1221.1
+3    | A  | Jaśkowa Dolina 01                   | 0.98   | 17655  | 11308    | 1158.1
+3    | A  | Jaśkowa Dolina 01                   | 0.98   | 17655  | 11308    | 1158.1
+5    | A  | Oliwa PKP 04                        | 0.97   | 13302  | 11308    | 1096.2
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+4843 | F  | Demptowo - Jednostka Wojskowa 01    | 0.22   | 0      | 11308    | 0.2  
+4842 | F  | Kieleńska Huta 14                   | 0.22   | 46     | 11308    | 0.6  
+4841 | F  | Kieleńska Huta 19                   | 0.23   | 69     | 11308    | 0.5  
+4840 | F  | Dębogórze - Partyzantów 01          | 0.23   | 0      | 11308    | 0.7  
+4839 | F  | Dębogórze - Partyzantów 02          | 0.23   | 0      | 11308    | 0.7  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: WARSZAWA]
+------------------------------------------------------------------------------------------
+Populacja: 3,081,843 | Mediana RCN: 12,844 PLN/m2 | Transakcje: 44723
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Wiatraczna                          | 0.99   | 15467  | 12844    | 392.6
+2    | A  | Hala Kopińska                       | 0.99   | 12816  | 12844    | 466.0
+3    | A  | Wiatraczna                          | 0.98   | 15113  | 12844    | 354.7
+4    | A  | Pl. Szembeka                        | 0.98   | 11602  | 12844    | 762.0
+5    | A  | Hala Kopińska                       | 0.98   | 11921  | 12844    | 457.2
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+10393 | F  | Holendry Baranowskie Spacerowa III  | 0.23   | 30     | 12844    | 0.7  
+10392 | F  | Holendry Baranowskie Spacerowa III  | 0.23   | 33     | 12844    | 0.7  
+10391 | F  | Jastrzębnik Ziołowa                 | 0.23   | 19     | 12844    | 1.0  
+10390 | F  | Basin Bursztynowa                   | 0.23   | 28     | 12844    | 0.9  
+10389 | F  | Basin Bursztynowa                   | 0.23   | 28     | 12844    | 1.0  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: WROCLAW]
+------------------------------------------------------------------------------------------
+Populacja: 938,629 | Mediana RCN: 10,152 PLN/m2 | Transakcje: 14068
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Pomorska                            | 1.13   | 11928  | 19146    | 138.3
+2    | A  | Pomorska                            | 1.12   | 11864  | 18852    | 137.5
+3    | A  | Kamieńskiego                        | 1.11   | 7840   | 18032    | 144.7
+4    | A  | Kamieńskiego                        | 1.11   | 7888   | 18032    | 139.3
+5    | A  | Kamieńskiego                        | 1.11   | 6861   | 26612    | 77.8 
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+3438 | F  | Cesarzowice skrz.                   | 0.11   | 164    | 24       | 3.2  
+3437 | F  | Cesarzowice skrz.                   | 0.11   | 163    | 24       | 3.3  
+3436 | F  | Mleczna                             | 0.13   | 92     | 1603     | 1.9  
+3435 | F  | Miękinia Cegielnia                  | 0.15   | 282    | 3708     | 0.7  
+3434 | F  | Miękinia Cegielnia                  | 0.15   | 285    | 3708     | 0.7  
+------------------------------------------------------------------------------------------
+
+[AGLOMERACJA: ZIELONA-GORA]
+------------------------------------------------------------------------------------------
+Populacja: 141,680 | Mediana RCN: 6,787 PLN/m2 | Transakcje: 2758
+
+TOP 5 PRZYSTANKÓW (ELITE):
+Rank | Grade | Nazwa                               | Score  | Pop500 | Price    | Freq 
+1    | A  | Wiśniowa                            | 0.98   | 11115  | 6787     | 236.2
+2    | A  | Wiśniowa                            | 0.98   | 10303  | 6787     | 236.2
+3    | A  | Elżbietanki                         | 0.97   | 5147   | 6787     | 353.7
+4    | A  | Centrum                             | 0.97   | 4616   | 6787     | 449.2
+5    | A  | Węgierska                           | 0.97   | 9656   | 6787     | 189.7
+
+BOTTOM 5 PRZYSTANKÓW (THE AXE LIST):
+477  | F  | Zielona Góra Nowy Kisielin          | 0.22   | 0      | 6787     | 0.0  
+476  | F  | Barcikowiczki                       | 0.23   | 80     | 6787     | 2.8  
+475  | F  | NAFTOWA                             | 0.24   | 16     | 6787     | 0.6  
+474  | F  | Stelmet                             | 0.24   | 0      | 6787     | 5.3  
+473  | F  | Stelmet                             | 0.24   | 0      | 6787     | 5.6  
+------------------------------------------------------------------------------------------
+
+
+==========================================================================================
+GLOBAL SUMMARY
+==========================================================================================
+Total Agglomerations: 30
+Total Stops Analyzed: 61,173
+Total Human Reach:    16,867,234
+Full Report saved to: reports/FULL_AUDIT_20260321_0154.txt

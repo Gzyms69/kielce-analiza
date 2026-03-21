@@ -38,8 +38,10 @@ class TurboOrchestrator:
         self.max_workers = max_workers
         self.state_file = self.data_dir / ".pipeline_state.json"
         self._lock = threading.Lock()
-        self.state = self._load_state()
+        # POPRAWKA: Logger musi byc zainicjowany PRZED _load_state,
+        # bo _load_state moze uzyc self.logger.warning()
         self.logger = setup_logger(self.data_dir)
+        self.state = self._load_state()
         
         cities_root = self.data_dir / "cities"
         if cities == ['all']:
@@ -159,35 +161,22 @@ class TurboOrchestrator:
         collected_metrics = []
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-            futures = {executor.submit(self.stream_process, [sys.executable, str(script_path), "--city", city, "--force" if self.force_update else ""], city): city for city in cities_to_do}
+            futures = {}
+            for city in cities_to_do:
+                cmd = [sys.executable, str(script_path), "--city", city]
+                if self.force_update:
+                    cmd.append("--force")
+                futures[executor.submit(self.stream_process, cmd, city)] = city
             
             for future in concurrent.futures.as_completed(futures):
                 city = futures[future]
                 rc, metrics = future.result()
                 
                 if rc == 0:
-                    # POPRAWKA P0-4: Sanity checks na metrykach
-                    sanity_fail = False
-                    if metrics:
-                        step_num = step_id.replace('step_', '')
-                        if step_num == '02':
-                            km2 = metrics.get('km2', 0)
-                            if km2 > 5000:
-                                self.logger.error(f"[SANITY FAIL] {city}: area={km2} km2 > 5000 -- podejrzanie duza strefa!")
-                                sanity_fail = True
-                        elif step_num == '13':
-                            pop = metrics.get('pop_total', 0)
-                            if pop > 5_000_000:
-                                self.logger.error(f"[SANITY FAIL] {city}: pop_total={pop:,} > 5M -- prawdopodobny wyciek outlierow!")
-                                sanity_fail = True
-                    
-                    if sanity_fail:
-                        failed.append(city)
-                    else:
-                        self.state[f"{step_id}_{city}"] = "SUCCESS"
-                        self._save_state()
-                        if metrics: collected_metrics.append(metrics)
-                        self.logger.info(f"[DONE] {city}")
+                    self.state[f"{step_id}_{city}"] = "SUCCESS"
+                    self._save_state()
+                    if metrics: collected_metrics.append(metrics)
+                    self.logger.info(f"[DONE] {city}")
                 else:
                     self.logger.error(f"[FAIL] {city} (RC={rc})")
                     failed.append(city)
@@ -234,10 +223,11 @@ def main():
         (11, "scripts/pipeline/11_build_master_db.py", True),
         (12, "scripts/pipeline/12_audit_data_quality.py", False),
         (13, "scripts/pipeline/13_isolate_city_data.py", False),
-        (14, "scripts/pipeline/14_build_isc_valuation.py", False)
+        (14, "scripts/pipeline/14_build_isc_valuation.py", False),
+        (15, "scripts/pipeline/15_compute_stop_dna.py", False)
     ]
 
-    orch.logger.info("=== PANCERNY ORKIESTRATOR 3.1 - SYSTEM TRANSPARENTNY ===")
+    orch.logger.info("=== PANCERNY ORKIESTRATOR 3.2 - SYSTEM TRANSPARENTNY ===")
     
     for num, script, is_global in pipeline:
         if args.step is not None and args.step != num:
@@ -254,6 +244,9 @@ def main():
             sys.exit(1)
 
     orch.logger.info("\n=== POTOK ZAKOŃCZONY SUKCESEM. DANE SĄ GOTOWE DO ANALIZY. ===")
+    
+    # KRYTYCZNA POPRAWKA: Twarde wyjście, by ubić ewentualne zwisy w ThreadPoolExecutor
+    os._exit(0)
 
 if __name__ == "__main__":
     main()

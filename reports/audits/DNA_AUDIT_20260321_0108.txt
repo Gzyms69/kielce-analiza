@@ -1,0 +1,880 @@
+=== DEEP DATA INTEGRITY & POI DNA AUDIT (v7.8) - 20260321_0108 ===
+
+
+==========================================================================================
+ MIASTO: BIALYSTOK
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 383,482 osób
+[RCN] Liczba transakcji: 5391 | Mediana: 8,900 PLN | Max: 913,377 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,082,625,266
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     5 | 1,002,438,535
+3       | hospital_clinical              | T1_NATIONAL_MAGNET |    11 | 182,549,287
+4       | national_stadium               | T1_NATIONAL_MAGNET |     6 | 168,005,724
+5       | university_campus              | T1_NATIONAL_MAGNET |    34 | 118,863,608
+6       | industrial_zone                | T2_STRATEGIC_HUB |   243 | 19,659,298
+7       | commercial_zone                | T2_STRATEGIC_HUB |    57 | 18,829,132
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    37 | 15,417,955
+9       | logistics_hub                  | T2_STRATEGIC_HUB |     1 | 14,468,317
+10      | student_dormitory              | T2_STRATEGIC_HUB |     9 | 13,569,780
+11      | supermarket                    | T2_STRATEGIC_HUB |   146 | 9,968,054
+12      | government_central             | T2_STRATEGIC_HUB |   105 | 9,464,494
+13      | business_office                | T2_STRATEGIC_HUB |   160 | 8,434,062
+14      | marketplace                    | T3_LOCAL_CORE   |    13 | 1,586,392
+15      | education_high_school          | T3_LOCAL_CORE   |   137 | 1,565,982
+16      | sports_centre                  | T3_LOCAL_CORE   |    51 | 1,071,589
+17      | social_support_mops            | T3_LOCAL_CORE   |    42 | 1,026,005
+18      | culture_theatre                | T3_LOCAL_CORE   |    44 | 812,436
+19      | health_clinic                  | T3_LOCAL_CORE   |   206 | 703,012
+20      | park_recreation                | T4_DAILY_SERVICE |   104 | 152,216
+
+==========================================================================================
+ MIASTO: BYDGOSZCZ
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 403,938 osób
+[RCN] Liczba transakcji: 2565 | Mediana: 5,102 PLN | Max: 113,691 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 12,112,027,883
+2       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,107,418,887
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |     8 | 1,003,279,021
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    19 | 197,040,629
+5       | national_stadium               | T1_NATIONAL_MAGNET |     9 | 171,758,718
+6       | university_campus              | T1_NATIONAL_MAGNET |    61 | 165,828,812
+7       | industrial_zone                | T2_STRATEGIC_HUB |  1210 | 16,146,544
+8       | commercial_zone                | T2_STRATEGIC_HUB |   315 | 14,986,957
+9       | shopping_mall                  | T2_STRATEGIC_HUB |    25 | 13,522,974
+10      | logistics_hub                  | T2_STRATEGIC_HUB |     4 | 13,109,448
+11      | supermarket                    | T2_STRATEGIC_HUB |   148 | 10,387,613
+12      | government_central             | T2_STRATEGIC_HUB |    78 | 9,970,477
+13      | business_office                | T2_STRATEGIC_HUB |    45 | 8,224,736
+14      | education_high_school          | T3_LOCAL_CORE   |   157 | 1,592,195
+15      | marketplace                    | T3_LOCAL_CORE   |    13 | 1,402,944
+16      | sports_centre                  | T3_LOCAL_CORE   |   121 | 1,263,163
+17      | social_support_mops            | T3_LOCAL_CORE   |    28 | 1,244,646
+18      | culture_theatre                | T3_LOCAL_CORE   |    39 | 943,459
+19      | health_clinic                  | T3_LOCAL_CORE   |   143 | 861,420
+20      | education_preschool            | T4_DAILY_SERVICE |   111 | 131,935
+
+==========================================================================================
+ MIASTO: CZESTOCHOWA
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 240,937 osób
+[RCN] Liczba transakcji: 2225 | Mediana: 6,712 PLN | Max: 466,786 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 1,979,141,801
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     3 | 963,999,152
+3       | national_stadium               | T1_NATIONAL_MAGNET |     6 | 191,714,713
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |     8 | 182,809,636
+5       | university_campus              | T1_NATIONAL_MAGNET |    13 | 173,705,606
+6       | industrial_zone                | T2_STRATEGIC_HUB |   164 | 19,058,404
+7       | commercial_zone                | T2_STRATEGIC_HUB |    43 | 16,924,153
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    17 | 14,977,890
+9       | government_central             | T2_STRATEGIC_HUB |    29 | 10,673,739
+10      | supermarket                    | T2_STRATEGIC_HUB |    80 | 9,860,359
+11      | business_office                | T2_STRATEGIC_HUB |    40 | 8,702,636
+12      | education_high_school          | T3_LOCAL_CORE   |    94 | 1,517,152
+13      | sports_centre                  | T3_LOCAL_CORE   |    33 | 1,310,643
+14      | marketplace                    | T3_LOCAL_CORE   |     8 | 1,296,084
+15      | social_support_mops            | T3_LOCAL_CORE   |    15 | 1,038,461
+16      | health_clinic                  | T3_LOCAL_CORE   |    71 | 738,918
+17      | culture_theatre                | T3_LOCAL_CORE   |    33 | 735,454
+18      | education_preschool            | T4_DAILY_SERVICE |    36 | 124,088
+19      | place_of_worship               | T4_DAILY_SERVICE |    91 | 96,142
+20      | park_recreation                | T4_DAILY_SERVICE |   298 | 92,181
+
+==========================================================================================
+ MIASTO: ELBLAG
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 119,411 osób
+[RCN] Liczba transakcji: 2931 | Mediana: 6,783 PLN | Max: 187,972 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | regional_rail_hub              | T1_NATIONAL_MAGNET |     1 | 926,262,790
+2       | national_stadium               | T1_NATIONAL_MAGNET |     1 | 200,393,311
+3       | hospital_clinical              | T1_NATIONAL_MAGNET |     4 | 183,292,800
+4       | university_campus              | T1_NATIONAL_MAGNET |     6 | 180,843,599
+5       | commercial_zone                | T2_STRATEGIC_HUB |    17 | 16,859,781
+6       | industrial_zone                | T2_STRATEGIC_HUB |   301 | 15,030,380
+7       | shopping_mall                  | T2_STRATEGIC_HUB |    13 | 12,027,971
+8       | supermarket                    | T2_STRATEGIC_HUB |    61 | 8,607,439
+9       | business_office                | T2_STRATEGIC_HUB |    52 | 8,187,785
+10      | government_central             | T2_STRATEGIC_HUB |    27 | 7,534,658
+11      | education_high_school          | T3_LOCAL_CORE   |    35 | 1,719,527
+12      | sports_centre                  | T3_LOCAL_CORE   |    11 | 1,347,491
+13      | marketplace                    | T3_LOCAL_CORE   |     6 | 1,126,611
+14      | social_support_mops            | T3_LOCAL_CORE   |    12 | 1,026,927
+15      | health_clinic                  | T3_LOCAL_CORE   |    50 | 742,814
+16      | culture_theatre                | T3_LOCAL_CORE   |    15 | 693,017
+17      | education_preschool            | T4_DAILY_SERVICE |    40 | 122,958
+18      | place_of_worship               | T4_DAILY_SERVICE |    38 | 93,366
+19      | park_recreation                | T4_DAILY_SERVICE |   266 | 92,540
+20      | police_station                 | T4_DAILY_SERVICE |     4 | 88,610
+
+==========================================================================================
+ MIASTO: ELK
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 72,490 osób
+[RCN] Liczba transakcji: 1383 | Mediana: 5,126 PLN | Max: 106,934 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | regional_rail_hub              | T1_NATIONAL_MAGNET |     3 | 863,838,032
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     3 | 161,017,848
+3       | university_campus              | T1_NATIONAL_MAGNET |     5 | 118,147,568
+4       | industrial_zone                | T2_STRATEGIC_HUB |    71 | 16,617,390
+5       | commercial_zone                | T2_STRATEGIC_HUB |    44 | 16,247,547
+6       | shopping_mall                  | T2_STRATEGIC_HUB |     4 | 13,271,382
+7       | supermarket                    | T2_STRATEGIC_HUB |    32 | 9,981,363
+8       | business_office                | T2_STRATEGIC_HUB |     8 | 6,888,089
+9       | government_central             | T2_STRATEGIC_HUB |    37 | 6,843,579
+10      | marketplace                    | T3_LOCAL_CORE   |     3 | 1,267,538
+11      | education_high_school          | T3_LOCAL_CORE   |    47 | 1,079,872
+12      | sports_centre                  | T3_LOCAL_CORE   |    30 | 1,030,843
+13      | social_support_mops            | T3_LOCAL_CORE   |    10 | 762,741
+14      | culture_theatre                | T3_LOCAL_CORE   |     7 | 622,213
+15      | health_clinic                  | T3_LOCAL_CORE   |    65 | 586,282
+16      | park_recreation                | T4_DAILY_SERVICE |   713 | 116,746
+17      | education_preschool            | T4_DAILY_SERVICE |    25 | 84,659
+18      | place_of_worship               | T4_DAILY_SERVICE |    36 | 80,280
+19      | police_station                 | T4_DAILY_SERVICE |     3 | 78,898
+20      | specialized_retail             | T4_DAILY_SERVICE |    94 | 63,560
+
+==========================================================================================
+ MIASTO: GIZYCKO
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 35,698 osób
+[RCN] Liczba transakcji: 91 | Mediana: 3,741 PLN | Max: 23,153 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | regional_rail_hub              | T1_NATIONAL_MAGNET |     2 | 785,274,458
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     1 | 195,831,810
+3       | commercial_zone                | T2_STRATEGIC_HUB |     3 | 15,533,367
+4       | industrial_zone                | T2_STRATEGIC_HUB |    13 | 15,437,533
+5       | shopping_mall                  | T2_STRATEGIC_HUB |     5 | 9,359,042
+6       | supermarket                    | T2_STRATEGIC_HUB |    19 | 7,642,037
+7       | government_central             | T2_STRATEGIC_HUB |    15 | 6,922,875
+8       | business_office                | T2_STRATEGIC_HUB |     3 | 5,916,516
+9       | marketplace                    | T3_LOCAL_CORE   |     1 | 1,555,028
+10      | education_high_school          | T3_LOCAL_CORE   |    15 | 1,252,998
+11      | sports_centre                  | T3_LOCAL_CORE   |    17 | 907,915
+12      | culture_theatre                | T3_LOCAL_CORE   |     3 | 812,677
+13      | health_clinic                  | T3_LOCAL_CORE   |     4 | 733,491
+14      | social_support_mops            | T3_LOCAL_CORE   |     1 | 532,585
+15      | park_recreation                | T4_DAILY_SERVICE |    11 | 137,677
+16      | police_station                 | T4_DAILY_SERVICE |     2 | 78,680
+17      | place_of_worship               | T4_DAILY_SERVICE |    22 | 74,304
+18      | specialized_retail             | T4_DAILY_SERVICE |    20 | 73,837
+19      | education_preschool            | T4_DAILY_SERVICE |    12 | 72,291
+20      | car_services                   | T4_DAILY_SERVICE |     6 | 70,141
+
+==========================================================================================
+ MIASTO: GORZOW
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 129,431 osób
+[RCN] Liczba transakcji: 2733 | Mediana: 6,821 PLN | Max: 101,089 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | regional_rail_hub              | T1_NATIONAL_MAGNET |     2 | 921,385,883
+2       | national_stadium               | T1_NATIONAL_MAGNET |     3 | 204,946,738
+3       | hospital_clinical              | T1_NATIONAL_MAGNET |     4 | 204,384,011
+4       | university_campus              | T1_NATIONAL_MAGNET |    13 | 135,277,489
+5       | industrial_zone                | T2_STRATEGIC_HUB |   306 | 14,149,315
+6       | shopping_mall                  | T2_STRATEGIC_HUB |    16 | 14,085,103
+7       | commercial_zone                | T2_STRATEGIC_HUB |   255 | 11,262,084
+8       | student_dormitory              | T2_STRATEGIC_HUB |     1 | 9,906,069
+9       | supermarket                    | T2_STRATEGIC_HUB |    67 | 9,567,220
+10      | government_central             | T2_STRATEGIC_HUB |    48 | 8,541,954
+11      | business_office                | T2_STRATEGIC_HUB |    18 | 6,143,270
+12      | sports_centre                  | T3_LOCAL_CORE   |    34 | 1,288,812
+13      | education_high_school          | T3_LOCAL_CORE   |    99 | 1,266,203
+14      | marketplace                    | T3_LOCAL_CORE   |     6 | 1,138,807
+15      | health_clinic                  | T3_LOCAL_CORE   |    45 | 812,441
+16      | culture_theatre                | T3_LOCAL_CORE   |    16 | 760,848
+17      | social_support_mops            | T3_LOCAL_CORE   |     4 | 710,733
+18      | park_recreation                | T4_DAILY_SERVICE |   146 | 121,041
+19      | education_preschool            | T4_DAILY_SERVICE |    46 | 116,813
+20      | police_station                 | T4_DAILY_SERVICE |     9 | 99,491
+
+==========================================================================================
+ MIASTO: GZM
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 3,664,676 osób
+[RCN] Liczba transakcji: 50220 | Mediana: 7,640 PLN | Max: 4,478,799 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     2 | 14,245,200,757
+2       | national_rail_hub              | T0_MEGA_HUB     |    39 | 2,373,326,546
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    85 | 1,164,556,865
+4       | national_stadium               | T1_NATIONAL_MAGNET |   123 | 231,149,122
+5       | hospital_clinical              | T1_NATIONAL_MAGNET |   140 | 226,220,574
+6       | university_campus              | T1_NATIONAL_MAGNET |   196 | 170,147,594
+7       | exhibition_centre              | T1_NATIONAL_MAGNET |     1 | 86,048,094
+8       | industrial_zone                | T2_STRATEGIC_HUB |  4863 | 20,108,729
+9       | commercial_zone                | T2_STRATEGIC_HUB |  2658 | 18,094,845
+10      | shopping_mall                  | T2_STRATEGIC_HUB |   239 | 17,571,600
+11      | student_dormitory              | T2_STRATEGIC_HUB |     2 | 17,057,668
+12      | logistics_hub                  | T2_STRATEGIC_HUB |     4 | 13,573,333
+13      | supermarket                    | T2_STRATEGIC_HUB |  1335 | 12,535,889
+14      | government_central             | T2_STRATEGIC_HUB |   681 | 10,729,245
+15      | business_office                | T2_STRATEGIC_HUB |   985 | 8,518,599
+16      | marketplace                    | T3_LOCAL_CORE   |   133 | 1,777,249
+17      | education_high_school          | T3_LOCAL_CORE   |  1766 | 1,740,903
+18      | sports_centre                  | T3_LOCAL_CORE   |   886 | 1,575,690
+19      | social_support_mops            | T3_LOCAL_CORE   |   309 | 1,202,339
+20      | culture_theatre                | T3_LOCAL_CORE   |   546 | 927,271
+
+==========================================================================================
+ MIASTO: KIELCE
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 287,314 osób
+[RCN] Liczba transakcji: 3137 | Mediana: 8,366 PLN | Max: 85,673 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,042,951,153
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     7 | 975,531,521
+3       | exhibition_centre              | T1_NATIONAL_MAGNET |     1 | 283,047,535
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    14 | 197,428,183
+5       | national_stadium               | T1_NATIONAL_MAGNET |     8 | 186,557,442
+6       | university_campus              | T1_NATIONAL_MAGNET |    39 | 112,235,751
+7       | industrial_zone                | T2_STRATEGIC_HUB |   320 | 18,123,958
+8       | commercial_zone                | T2_STRATEGIC_HUB |   433 | 16,041,411
+9       | shopping_mall                  | T2_STRATEGIC_HUB |    20 | 14,080,324
+10      | supermarket                    | T2_STRATEGIC_HUB |   121 | 8,927,501
+11      | government_central             | T2_STRATEGIC_HUB |    89 | 8,648,478
+12      | business_office                | T2_STRATEGIC_HUB |    96 | 6,997,067
+13      | student_dormitory              | T2_STRATEGIC_HUB |     1 | 6,809,837
+14      | marketplace                    | T3_LOCAL_CORE   |     8 | 1,556,897
+15      | education_high_school          | T3_LOCAL_CORE   |   130 | 1,449,761
+16      | sports_centre                  | T3_LOCAL_CORE   |    47 | 1,329,471
+17      | social_support_mops            | T3_LOCAL_CORE   |    17 | 949,437
+18      | culture_theatre                | T3_LOCAL_CORE   |    41 | 811,786
+19      | health_clinic                  | T3_LOCAL_CORE   |   226 | 676,378
+20      | education_preschool            | T4_DAILY_SERVICE |    83 | 112,150
+
+==========================================================================================
+ MIASTO: KRAKOW
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 1,126,209 osób
+[RCN] Liczba transakcji: 20125 | Mediana: 13,226 PLN | Max: 1,263,563 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 12,866,682,356
+2       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,335,359,682
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    15 | 1,096,768,751
+4       | exhibition_centre              | T1_NATIONAL_MAGNET |     1 | 244,011,282
+5       | national_stadium               | T1_NATIONAL_MAGNET |    26 | 221,389,246
+6       | hospital_clinical              | T1_NATIONAL_MAGNET |    31 | 208,742,406
+7       | university_campus              | T1_NATIONAL_MAGNET |   145 | 123,210,612
+8       | student_dormitory              | T2_STRATEGIC_HUB |     1 | 19,713,696
+9       | industrial_zone                | T2_STRATEGIC_HUB |  1125 | 18,338,588
+10      | commercial_zone                | T2_STRATEGIC_HUB |   763 | 16,917,104
+11      | shopping_mall                  | T2_STRATEGIC_HUB |    57 | 16,897,007
+12      | logistics_hub                  | T2_STRATEGIC_HUB |     8 | 10,690,240
+13      | supermarket                    | T2_STRATEGIC_HUB |   345 | 10,442,980
+14      | government_central             | T2_STRATEGIC_HUB |   193 | 9,216,323
+15      | business_office                | T2_STRATEGIC_HUB |   306 | 7,527,872
+16      | marketplace                    | T3_LOCAL_CORE   |    32 | 1,658,454
+17      | education_high_school          | T3_LOCAL_CORE   |   486 | 1,551,006
+18      | sports_centre                  | T3_LOCAL_CORE   |   329 | 1,210,762
+19      | social_support_mops            | T3_LOCAL_CORE   |    78 | 1,051,957
+20      | culture_theatre                | T3_LOCAL_CORE   |   178 | 815,588
+
+==========================================================================================
+ MIASTO: KUTNO
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 47,419 osób
+[RCN] Liczba transakcji: 437 | Mediana: 6,579 PLN | Max: 48,145 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 1,656,914,146
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     1 | 205,779,303
+3       | national_stadium               | T1_NATIONAL_MAGNET |     1 | 173,645,940
+4       | university_campus              | T1_NATIONAL_MAGNET |     2 | 133,226,707
+5       | industrial_zone                | T2_STRATEGIC_HUB |    99 | 16,649,214
+6       | shopping_mall                  | T2_STRATEGIC_HUB |     2 | 15,223,758
+7       | commercial_zone                | T2_STRATEGIC_HUB |     3 | 14,690,034
+8       | supermarket                    | T2_STRATEGIC_HUB |    20 | 9,936,671
+9       | government_central             | T2_STRATEGIC_HUB |    12 | 9,043,995
+10      | business_office                | T2_STRATEGIC_HUB |     4 | 8,033,699
+11      | social_support_mops            | T3_LOCAL_CORE   |     4 | 1,568,005
+12      | marketplace                    | T3_LOCAL_CORE   |     2 | 1,565,972
+13      | education_high_school          | T3_LOCAL_CORE   |    20 | 1,306,026
+14      | sports_centre                  | T3_LOCAL_CORE   |    10 | 1,092,438
+15      | culture_theatre                | T3_LOCAL_CORE   |     4 | 797,918
+16      | health_clinic                  | T3_LOCAL_CORE   |    10 | 788,834
+17      | police_station                 | T4_DAILY_SERVICE |     2 | 106,249
+18      | education_preschool            | T4_DAILY_SERVICE |    10 | 105,012
+19      | park_recreation                | T4_DAILY_SERVICE |    27 | 103,354
+20      | place_of_worship               | T4_DAILY_SERVICE |    19 | 83,245
+
+==========================================================================================
+ MIASTO: LEGNICA
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 115,261 osób
+[RCN] Liczba transakcji: 3221 | Mediana: 6,051 PLN | Max: 100,013,224 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 1,835,657,894
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     1 | 264,345,471
+3       | national_stadium               | T1_NATIONAL_MAGNET |     2 | 172,522,241
+4       | university_campus              | T1_NATIONAL_MAGNET |     3 | 167,921,379
+5       | shopping_mall                  | T2_STRATEGIC_HUB |     7 | 16,793,182
+6       | industrial_zone                | T2_STRATEGIC_HUB |   163 | 16,546,927
+7       | commercial_zone                | T2_STRATEGIC_HUB |    56 | 15,579,017
+8       | supermarket                    | T2_STRATEGIC_HUB |    43 | 9,095,439
+9       | government_central             | T2_STRATEGIC_HUB |    37 | 7,466,867
+10      | business_office                | T2_STRATEGIC_HUB |    18 | 6,855,331
+11      | marketplace                    | T3_LOCAL_CORE   |     3 | 1,288,346
+12      | education_high_school          | T3_LOCAL_CORE   |    41 | 1,261,891
+13      | sports_centre                  | T3_LOCAL_CORE   |    17 | 1,052,974
+14      | social_support_mops            | T3_LOCAL_CORE   |     7 | 861,531
+15      | health_clinic                  | T3_LOCAL_CORE   |    31 | 652,572
+16      | culture_theatre                | T3_LOCAL_CORE   |    24 | 631,128
+17      | park_recreation                | T4_DAILY_SERVICE |   206 | 119,831
+18      | education_preschool            | T4_DAILY_SERVICE |    30 | 103,373
+19      | place_of_worship               | T4_DAILY_SERVICE |    64 | 86,501
+20      | car_services                   | T4_DAILY_SERVICE |    40 | 68,955
+
+==========================================================================================
+ MIASTO: LESZNO
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 81,945 osób
+[RCN] Liczba transakcji: 1491 | Mediana: 5,770 PLN | Max: 62,090 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | regional_rail_hub              | T1_NATIONAL_MAGNET |     1 | 889,410,781
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     2 | 189,557,435
+3       | national_stadium               | T1_NATIONAL_MAGNET |     4 | 133,784,159
+4       | university_campus              | T1_NATIONAL_MAGNET |    24 | 83,363,846
+5       | industrial_zone                | T2_STRATEGIC_HUB |    99 | 16,196,875
+6       | commercial_zone                | T2_STRATEGIC_HUB |    37 | 14,385,927
+7       | shopping_mall                  | T2_STRATEGIC_HUB |    11 | 13,000,410
+8       | supermarket                    | T2_STRATEGIC_HUB |    47 | 8,305,925
+9       | government_central             | T2_STRATEGIC_HUB |    41 | 6,846,313
+10      | business_office                | T2_STRATEGIC_HUB |    40 | 5,641,415
+11      | marketplace                    | T3_LOCAL_CORE   |     3 | 1,268,806
+12      | education_high_school          | T3_LOCAL_CORE   |    52 | 1,164,352
+13      | sports_centre                  | T3_LOCAL_CORE   |    15 | 872,261
+14      | social_support_mops            | T3_LOCAL_CORE   |     8 | 865,422
+15      | culture_theatre                | T3_LOCAL_CORE   |    13 | 715,442
+16      | health_clinic                  | T3_LOCAL_CORE   |    48 | 615,081
+17      | park_recreation                | T4_DAILY_SERVICE |    72 | 121,476
+18      | education_preschool            | T4_DAILY_SERVICE |    41 | 94,565
+19      | place_of_worship               | T4_DAILY_SERVICE |    26 | 90,725
+20      | police_station                 | T4_DAILY_SERVICE |    11 | 82,011
+
+==========================================================================================
+ MIASTO: LODZ
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 1,041,306 osób
+[RCN] Liczba transakcji: 3191 | Mediana: 6,690 PLN | Max: 1,086,552 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 12,201,809,810
+2       | national_rail_hub              | T0_MEGA_HUB     |     5 | 2,223,042,846
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    16 | 1,081,246,464
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    37 | 217,607,838
+5       | national_stadium               | T1_NATIONAL_MAGNET |    12 | 200,667,933
+6       | university_campus              | T1_NATIONAL_MAGNET |    95 | 183,683,547
+7       | industrial_zone                | T2_STRATEGIC_HUB |  1572 | 18,455,587
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    82 | 16,642,232
+9       | commercial_zone                | T2_STRATEGIC_HUB |  1181 | 16,217,993
+10      | logistics_hub                  | T2_STRATEGIC_HUB |     8 | 15,047,096
+11      | student_dormitory              | T2_STRATEGIC_HUB |     1 | 14,196,877
+12      | supermarket                    | T2_STRATEGIC_HUB |   359 | 11,767,018
+13      | government_central             | T2_STRATEGIC_HUB |   207 | 9,659,593
+14      | business_office                | T2_STRATEGIC_HUB |   162 | 7,993,719
+15      | education_high_school          | T3_LOCAL_CORE   |   416 | 1,615,091
+16      | marketplace                    | T3_LOCAL_CORE   |    47 | 1,529,504
+17      | social_support_mops            | T3_LOCAL_CORE   |    75 | 1,430,982
+18      | sports_centre                  | T3_LOCAL_CORE   |   222 | 1,247,219
+19      | culture_theatre                | T3_LOCAL_CORE   |   158 | 860,008
+20      | health_clinic                  | T3_LOCAL_CORE   |   471 | 775,580
+
+==========================================================================================
+ MIASTO: LOMZA
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 65,199 osób
+[RCN] Liczba transakcji: 698 | Mediana: 7,117 PLN | Max: 47,203 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_stadium               | T1_NATIONAL_MAGNET |     1 | 209,816,490
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     2 | 201,265,958
+3       | university_campus              | T1_NATIONAL_MAGNET |     3 | 55,619,866
+4       | industrial_zone                | T2_STRATEGIC_HUB |    21 | 18,837,043
+5       | commercial_zone                | T2_STRATEGIC_HUB |     2 | 14,871,243
+6       | shopping_mall                  | T2_STRATEGIC_HUB |     6 | 11,881,837
+7       | supermarket                    | T2_STRATEGIC_HUB |    32 | 8,484,178
+8       | government_central             | T2_STRATEGIC_HUB |    16 | 7,987,684
+9       | business_office                | T2_STRATEGIC_HUB |     7 | 6,344,726
+10      | education_high_school          | T3_LOCAL_CORE   |    32 | 1,253,097
+11      | sports_centre                  | T3_LOCAL_CORE   |     6 | 1,161,599
+12      | marketplace                    | T3_LOCAL_CORE   |     2 | 1,104,263
+13      | culture_theatre                | T3_LOCAL_CORE   |     5 | 811,842
+14      | health_clinic                  | T3_LOCAL_CORE   |    10 | 655,415
+15      | social_support_mops            | T3_LOCAL_CORE   |     3 | 556,199
+16      | park_recreation                | T4_DAILY_SERVICE |    27 | 123,321
+17      | education_preschool            | T4_DAILY_SERVICE |    33 | 87,449
+18      | place_of_worship               | T4_DAILY_SERVICE |    31 | 75,842
+19      | post_office                    | T4_DAILY_SERVICE |     5 | 68,389
+20      | car_services                   | T4_DAILY_SERVICE |    25 | 65,091
+
+==========================================================================================
+ MIASTO: LUBLIN
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 446,126 osób
+[RCN] Liczba transakcji: 6180 | Mediana: 9,585 PLN | Max: 105,714 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 11,394,798,397
+2       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,132,083,475
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |     4 | 1,032,154,592
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    23 | 193,053,905
+5       | national_stadium               | T1_NATIONAL_MAGNET |    10 | 180,808,071
+6       | university_campus              | T1_NATIONAL_MAGNET |    86 | 113,819,197
+7       | industrial_zone                | T2_STRATEGIC_HUB |   338 | 17,911,729
+8       | commercial_zone                | T2_STRATEGIC_HUB |   341 | 16,747,792
+9       | shopping_mall                  | T2_STRATEGIC_HUB |    35 | 16,050,373
+10      | student_dormitory              | T2_STRATEGIC_HUB |     1 | 15,772,713
+11      | supermarket                    | T2_STRATEGIC_HUB |   191 | 10,016,194
+12      | government_central             | T2_STRATEGIC_HUB |   104 | 9,279,776
+13      | business_office                | T2_STRATEGIC_HUB |    95 | 7,766,701
+14      | education_high_school          | T3_LOCAL_CORE   |   274 | 1,219,786
+15      | marketplace                    | T3_LOCAL_CORE   |    31 | 1,198,959
+16      | social_support_mops            | T3_LOCAL_CORE   |    69 | 1,049,006
+17      | sports_centre                  | T3_LOCAL_CORE   |   172 | 999,456
+18      | health_clinic                  | T3_LOCAL_CORE   |   210 | 746,089
+19      | culture_theatre                | T3_LOCAL_CORE   |    84 | 695,810
+20      | police_station                 | T4_DAILY_SERVICE |    22 | 147,719
+
+==========================================================================================
+ MIASTO: OLSZTYN
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 238,431 osób
+[RCN] Liczba transakcji: 4659 | Mediana: 8,421 PLN | Max: 244,772 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 1,989,192,714
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     7 | 949,351,173
+3       | hospital_clinical              | T1_NATIONAL_MAGNET |    11 | 207,085,935
+4       | national_stadium               | T1_NATIONAL_MAGNET |     5 | 169,253,388
+5       | university_campus              | T1_NATIONAL_MAGNET |    31 | 87,871,698
+6       | industrial_zone                | T2_STRATEGIC_HUB |   230 | 17,080,772
+7       | commercial_zone                | T2_STRATEGIC_HUB |    68 | 14,475,726
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    19 | 14,190,710
+9       | supermarket                    | T2_STRATEGIC_HUB |    98 | 9,260,162
+10      | government_central             | T2_STRATEGIC_HUB |    89 | 8,178,410
+11      | business_office                | T2_STRATEGIC_HUB |    68 | 6,989,269
+12      | marketplace                    | T3_LOCAL_CORE   |     8 | 1,483,566
+13      | education_high_school          | T3_LOCAL_CORE   |    91 | 1,470,759
+14      | sports_centre                  | T3_LOCAL_CORE   |    46 | 1,202,393
+15      | social_support_mops            | T3_LOCAL_CORE   |    22 | 966,064
+16      | culture_theatre                | T3_LOCAL_CORE   |    34 | 857,279
+17      | health_clinic                  | T3_LOCAL_CORE   |    78 | 699,349
+18      | police_station                 | T4_DAILY_SERVICE |    17 | 100,220
+19      | park_recreation                | T4_DAILY_SERVICE |   259 | 97,809
+20      | education_preschool            | T4_DAILY_SERVICE |    88 | 96,122
+
+==========================================================================================
+ MIASTO: OPOLE
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 150,715 osób
+[RCN] Liczba transakcji: 1748 | Mediana: 8,594 PLN | Max: 99,881 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     4 | 1,824,162,616
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     3 | 918,515,343
+3       | hospital_clinical              | T1_NATIONAL_MAGNET |     8 | 183,702,544
+4       | university_campus              | T1_NATIONAL_MAGNET |    17 | 158,646,576
+5       | national_stadium               | T1_NATIONAL_MAGNET |     3 | 158,231,059
+6       | commercial_zone                | T2_STRATEGIC_HUB |    29 | 16,146,585
+7       | industrial_zone                | T2_STRATEGIC_HUB |   314 | 16,028,878
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    12 | 14,840,498
+9       | supermarket                    | T2_STRATEGIC_HUB |    70 | 8,909,957
+10      | government_central             | T2_STRATEGIC_HUB |    64 | 8,172,918
+11      | business_office                | T2_STRATEGIC_HUB |    24 | 7,510,738
+12      | marketplace                    | T3_LOCAL_CORE   |     2 | 1,351,469
+13      | education_high_school          | T3_LOCAL_CORE   |    60 | 1,256,191
+14      | sports_centre                  | T3_LOCAL_CORE   |    32 | 1,204,840
+15      | social_support_mops            | T3_LOCAL_CORE   |     9 | 841,670
+16      | health_clinic                  | T3_LOCAL_CORE   |    41 | 756,487
+17      | culture_theatre                | T3_LOCAL_CORE   |    14 | 754,753
+18      | park_recreation                | T4_DAILY_SERVICE |    55 | 118,514
+19      | education_preschool            | T4_DAILY_SERVICE |    41 | 106,438
+20      | place_of_worship               | T4_DAILY_SERVICE |    63 | 91,039
+
+==========================================================================================
+ MIASTO: POZNAN
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 1,361,470 osób
+[RCN] Liczba transakcji: 20728 | Mediana: 8,679 PLN | Max: 1,142,795 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 12,994,493,596
+2       | national_rail_hub              | T0_MEGA_HUB     |     4 | 2,311,637,108
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    44 | 1,092,194,971
+4       | exhibition_centre              | T1_NATIONAL_MAGNET |     1 | 345,950,452
+5       | national_stadium               | T1_NATIONAL_MAGNET |    30 | 227,686,146
+6       | hospital_clinical              | T1_NATIONAL_MAGNET |    41 | 206,239,010
+7       | university_campus              | T1_NATIONAL_MAGNET |   112 | 147,991,893
+8       | industrial_zone                | T2_STRATEGIC_HUB |  2022 | 19,272,454
+9       | logistics_hub                  | T2_STRATEGIC_HUB |     6 | 18,565,621
+10      | shopping_mall                  | T2_STRATEGIC_HUB |    81 | 17,882,135
+11      | commercial_zone                | T2_STRATEGIC_HUB |  1182 | 17,057,714
+12      | student_dormitory              | T2_STRATEGIC_HUB |     1 | 12,960,871
+13      | supermarket                    | T2_STRATEGIC_HUB |   616 | 11,541,554
+14      | government_central             | T2_STRATEGIC_HUB |   309 | 9,121,847
+15      | business_office                | T2_STRATEGIC_HUB |   947 | 7,332,051
+16      | education_high_school          | T3_LOCAL_CORE   |   575 | 1,595,901
+17      | marketplace                    | T3_LOCAL_CORE   |    50 | 1,440,419
+18      | sports_centre                  | T3_LOCAL_CORE   |   357 | 1,302,369
+19      | social_support_mops            | T3_LOCAL_CORE   |   100 | 1,139,470
+20      | culture_theatre                | T3_LOCAL_CORE   |   193 | 852,282
+
+==========================================================================================
+ MIASTO: PRZEMYSL
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 71,214 osób
+[RCN] Liczba transakcji: 693 | Mediana: 6,088 PLN | Max: 77,936 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 1,759,789,824
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     1 | 879,894,912
+3       | national_stadium               | T1_NATIONAL_MAGNET |     1 | 213,044,284
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |     3 | 188,558,409
+5       | university_campus              | T1_NATIONAL_MAGNET |     7 | 145,530,225
+6       | shopping_mall                  | T2_STRATEGIC_HUB |     4 | 14,803,594
+7       | commercial_zone                | T2_STRATEGIC_HUB |    68 | 13,019,604
+8       | industrial_zone                | T2_STRATEGIC_HUB |   268 | 11,291,705
+9       | supermarket                    | T2_STRATEGIC_HUB |    23 | 9,801,324
+10      | government_central             | T2_STRATEGIC_HUB |    32 | 8,749,106
+11      | business_office                | T2_STRATEGIC_HUB |    13 | 7,795,519
+12      | marketplace                    | T3_LOCAL_CORE   |     3 | 1,679,435
+13      | education_high_school          | T3_LOCAL_CORE   |    51 | 1,289,453
+14      | social_support_mops            | T3_LOCAL_CORE   |    17 | 1,279,561
+15      | sports_centre                  | T3_LOCAL_CORE   |    20 | 1,172,422
+16      | culture_theatre                | T3_LOCAL_CORE   |    16 | 741,821
+17      | health_clinic                  | T3_LOCAL_CORE   |    38 | 728,865
+18      | police_station                 | T4_DAILY_SERVICE |     6 | 103,883
+19      | education_preschool            | T4_DAILY_SERVICE |    35 | 101,395
+20      | park_recreation                | T4_DAILY_SERVICE |   151 | 90,022
+
+==========================================================================================
+ MIASTO: RADOM
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 239,185 osób
+[RCN] Liczba transakcji: 1255 | Mediana: 6,520 PLN | Max: 40,702 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 11,227,779,618
+2       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,041,463,199
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |     2 | 1,004,597,775
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |     8 | 205,885,186
+5       | national_stadium               | T1_NATIONAL_MAGNET |     9 | 137,754,941
+6       | university_campus              | T1_NATIONAL_MAGNET |    55 | 110,883,113
+7       | industrial_zone                | T2_STRATEGIC_HUB |   470 | 16,309,838
+8       | commercial_zone                | T2_STRATEGIC_HUB |    95 | 15,114,553
+9       | shopping_mall                  | T2_STRATEGIC_HUB |    30 | 13,998,461
+10      | supermarket                    | T2_STRATEGIC_HUB |    72 | 10,257,185
+11      | government_central             | T2_STRATEGIC_HUB |    42 | 8,233,671
+12      | business_office                | T2_STRATEGIC_HUB |    29 | 7,201,750
+13      | marketplace                    | T3_LOCAL_CORE   |     8 | 1,658,798
+14      | education_high_school          | T3_LOCAL_CORE   |   105 | 1,592,676
+15      | social_support_mops            | T3_LOCAL_CORE   |    21 | 1,394,383
+16      | sports_centre                  | T3_LOCAL_CORE   |    50 | 963,531
+17      | culture_theatre                | T3_LOCAL_CORE   |    27 | 822,770
+18      | health_clinic                  | T3_LOCAL_CORE   |   148 | 745,942
+19      | education_preschool            | T4_DAILY_SERVICE |    53 | 128,262
+20      | police_station                 | T4_DAILY_SERVICE |    10 | 109,960
+
+==========================================================================================
+ MIASTO: RZESZOW
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 439,622 osób
+[RCN] Liczba transakcji: 5846 | Mediana: 8,908 PLN | Max: 1,000,032,226 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 11,604,868,619
+2       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,126,677,063
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    12 | 1,002,685,211
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    13 | 208,457,412
+5       | national_stadium               | T1_NATIONAL_MAGNET |    24 | 178,545,083
+6       | university_campus              | T1_NATIONAL_MAGNET |    60 | 115,809,676
+7       | industrial_zone                | T2_STRATEGIC_HUB |   665 | 17,394,462
+8       | commercial_zone                | T2_STRATEGIC_HUB |   594 | 15,027,567
+9       | shopping_mall                  | T2_STRATEGIC_HUB |    44 | 13,689,327
+10      | government_central             | T2_STRATEGIC_HUB |   112 | 9,334,242
+11      | logistics_hub                  | T2_STRATEGIC_HUB |     1 | 9,266,423
+12      | supermarket                    | T2_STRATEGIC_HUB |   190 | 9,003,593
+13      | business_office                | T2_STRATEGIC_HUB |   105 | 7,949,879
+14      | marketplace                    | T3_LOCAL_CORE   |    16 | 1,455,003
+15      | education_high_school          | T3_LOCAL_CORE   |   305 | 1,362,387
+16      | sports_centre                  | T3_LOCAL_CORE   |    83 | 1,307,702
+17      | social_support_mops            | T3_LOCAL_CORE   |    33 | 1,238,689
+18      | culture_theatre                | T3_LOCAL_CORE   |    51 | 775,067
+19      | health_clinic                  | T3_LOCAL_CORE   |   207 | 772,360
+20      | park_recreation                | T4_DAILY_SERVICE |  1380 | 115,814
+
+==========================================================================================
+ MIASTO: SUWALKI
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 74,387 osób
+[RCN] Liczba transakcji: 262 | Mediana: 6,894 PLN | Max: 28,149 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | regional_rail_hub              | T1_NATIONAL_MAGNET |     2 | 857,181,483
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     1 | 215,742,988
+3       | university_campus              | T1_NATIONAL_MAGNET |     1 | 184,280,405
+4       | national_stadium               | T1_NATIONAL_MAGNET |     7 | 167,762,123
+5       | commercial_zone                | T2_STRATEGIC_HUB |    13 | 17,606,841
+6       | industrial_zone                | T2_STRATEGIC_HUB |    50 | 17,518,940
+7       | shopping_mall                  | T2_STRATEGIC_HUB |    11 | 11,637,051
+8       | supermarket                    | T2_STRATEGIC_HUB |    33 | 9,433,519
+9       | government_central             | T2_STRATEGIC_HUB |    18 | 9,322,867
+10      | business_office                | T2_STRATEGIC_HUB |     4 | 8,381,839
+11      | marketplace                    | T3_LOCAL_CORE   |     2 | 1,876,116
+12      | education_high_school          | T3_LOCAL_CORE   |    26 | 1,371,058
+13      | social_support_mops            | T3_LOCAL_CORE   |     2 | 1,144,611
+14      | culture_theatre                | T3_LOCAL_CORE   |     3 | 934,697
+15      | sports_centre                  | T3_LOCAL_CORE   |     8 | 931,653
+16      | health_clinic                  | T3_LOCAL_CORE   |    17 | 632,819
+17      | park_recreation                | T4_DAILY_SERVICE |    47 | 102,227
+18      | place_of_worship               | T4_DAILY_SERVICE |    19 | 93,379
+19      | police_station                 | T4_DAILY_SERVICE |     2 | 89,455
+20      | car_services                   | T4_DAILY_SERVICE |    36 | 88,998
+
+==========================================================================================
+ MIASTO: SWINOUJSCIE
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 45,308 osób
+[RCN] Liczba transakcji: 1753 | Mediana: 16,378 PLN | Max: 50,952,856 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     2 | 1,647,127,997
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     1 | 174,809,200
+3       | national_stadium               | T1_NATIONAL_MAGNET |     1 | 96,398,591
+4       | logistics_hub                  | T2_STRATEGIC_HUB |     1 | 17,307,900
+5       | industrial_zone                | T2_STRATEGIC_HUB |    36 | 15,937,745
+6       | commercial_zone                | T2_STRATEGIC_HUB |    16 | 13,746,613
+7       | shopping_mall                  | T2_STRATEGIC_HUB |     6 | 12,238,912
+8       | student_dormitory              | T2_STRATEGIC_HUB |     1 | 12,175,342
+9       | supermarket                    | T2_STRATEGIC_HUB |    25 | 7,894,624
+10      | government_central             | T2_STRATEGIC_HUB |    15 | 6,951,450
+11      | business_office                | T2_STRATEGIC_HUB |     8 | 6,391,988
+12      | education_high_school          | T3_LOCAL_CORE   |    16 | 1,484,402
+13      | marketplace                    | T3_LOCAL_CORE   |     1 | 1,423,189
+14      | social_support_mops            | T3_LOCAL_CORE   |     4 | 1,314,109
+15      | sports_centre                  | T3_LOCAL_CORE   |    12 | 942,461
+16      | culture_theatre                | T3_LOCAL_CORE   |     9 | 648,274
+17      | health_clinic                  | T3_LOCAL_CORE   |    11 | 642,152
+18      | education_preschool            | T4_DAILY_SERVICE |     9 | 120,496
+19      | police_station                 | T4_DAILY_SERVICE |     5 | 85,001
+20      | place_of_worship               | T4_DAILY_SERVICE |    15 | 80,570
+
+==========================================================================================
+ MIASTO: SZCZECIN
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 511,323 osób
+[RCN] Liczba transakcji: 5950 | Mediana: 7,936 PLN | Max: 1,082,434 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 11,681,083,885
+2       | national_rail_hub              | T0_MEGA_HUB     |     6 | 2,067,276,711
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |     2 | 1,060,769,976
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    11 | 252,532,591
+5       | national_stadium               | T1_NATIONAL_MAGNET |    10 | 198,848,374
+6       | university_campus              | T1_NATIONAL_MAGNET |    58 | 126,544,922
+7       | industrial_zone                | T2_STRATEGIC_HUB |   592 | 17,201,284
+8       | commercial_zone                | T2_STRATEGIC_HUB |   275 | 16,419,589
+9       | logistics_hub                  | T2_STRATEGIC_HUB |     2 | 16,341,996
+10      | shopping_mall                  | T2_STRATEGIC_HUB |    40 | 15,377,817
+11      | supermarket                    | T2_STRATEGIC_HUB |   209 | 10,317,385
+12      | government_central             | T2_STRATEGIC_HUB |   146 | 8,113,746
+13      | student_dormitory              | T2_STRATEGIC_HUB |     3 | 7,005,033
+14      | business_office                | T2_STRATEGIC_HUB |   315 | 6,679,190
+15      | education_high_school          | T3_LOCAL_CORE   |   221 | 1,416,944
+16      | marketplace                    | T3_LOCAL_CORE   |    24 | 1,334,902
+17      | sports_centre                  | T3_LOCAL_CORE   |   106 | 1,177,685
+18      | social_support_mops            | T3_LOCAL_CORE   |    75 | 1,026,250
+19      | culture_theatre                | T3_LOCAL_CORE   |    57 | 830,292
+20      | health_clinic                  | T3_LOCAL_CORE   |   356 | 708,098
+
+==========================================================================================
+ MIASTO: TORUN
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 255,210 osób
+[RCN] Liczba transakcji: 3978 | Mediana: 8,195 PLN | Max: 135,501 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 2,036,986,116
+2       | regional_rail_hub              | T1_NATIONAL_MAGNET |     6 | 976,579,693
+3       | national_stadium               | T1_NATIONAL_MAGNET |     5 | 196,925,449
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    18 | 166,981,404
+5       | university_campus              | T1_NATIONAL_MAGNET |   108 | 107,023,083
+6       | industrial_zone                | T2_STRATEGIC_HUB |   614 | 15,979,002
+7       | shopping_mall                  | T2_STRATEGIC_HUB |    22 | 14,654,440
+8       | commercial_zone                | T2_STRATEGIC_HUB |   526 | 14,007,661
+9       | supermarket                    | T2_STRATEGIC_HUB |   116 | 9,252,977
+10      | government_central             | T2_STRATEGIC_HUB |    95 | 7,339,433
+11      | business_office                | T2_STRATEGIC_HUB |    94 | 6,489,912
+12      | education_high_school          | T3_LOCAL_CORE   |   114 | 1,452,951
+13      | marketplace                    | T3_LOCAL_CORE   |     9 | 1,173,749
+14      | social_support_mops            | T3_LOCAL_CORE   |    40 | 1,157,215
+15      | sports_centre                  | T3_LOCAL_CORE   |    71 | 1,122,619
+16      | culture_theatre                | T3_LOCAL_CORE   |    38 | 818,718
+17      | health_clinic                  | T3_LOCAL_CORE   |   303 | 653,211
+18      | education_preschool            | T4_DAILY_SERVICE |    98 | 113,548
+19      | place_of_worship               | T4_DAILY_SERVICE |   100 | 88,442
+20      | police_station                 | T4_DAILY_SERVICE |     9 | 87,776
+
+==========================================================================================
+ MIASTO: TROJMIASTO
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 1,057,375 osób
+[RCN] Liczba transakcji: 26367 | Mediana: 11,308 PLN | Max: 1,220,310 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 12,309,477,399
+2       | national_rail_hub              | T0_MEGA_HUB     |     2 | 2,283,439,023
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    15 | 1,089,202,522
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    17 | 237,005,422
+5       | national_stadium               | T1_NATIONAL_MAGNET |    14 | 225,114,213
+6       | university_campus              | T1_NATIONAL_MAGNET |    62 | 157,518,603
+7       | logistics_hub                  | T2_STRATEGIC_HUB |     1 | 18,090,701
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    96 | 15,997,142
+9       | commercial_zone                | T2_STRATEGIC_HUB |  1068 | 15,845,496
+10      | industrial_zone                | T2_STRATEGIC_HUB |  1965 | 15,620,558
+11      | supermarket                    | T2_STRATEGIC_HUB |   323 | 10,806,010
+12      | government_central             | T2_STRATEGIC_HUB |   248 | 9,753,765
+13      | business_office                | T2_STRATEGIC_HUB |   374 | 7,851,232
+14      | education_high_school          | T3_LOCAL_CORE   |   361 | 1,620,719
+15      | marketplace                    | T3_LOCAL_CORE   |    30 | 1,563,413
+16      | social_support_mops            | T3_LOCAL_CORE   |    84 | 1,208,968
+17      | sports_centre                  | T3_LOCAL_CORE   |   217 | 1,192,521
+18      | culture_theatre                | T3_LOCAL_CORE   |   127 | 884,148
+19      | health_clinic                  | T3_LOCAL_CORE   |   683 | 730,926
+20      | police_station                 | T4_DAILY_SERVICE |    50 | 138,206
+
+==========================================================================================
+ MIASTO: WARSZAWA
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 3,081,843 osób
+[RCN] Liczba transakcji: 44723 | Mediana: 12,844 PLN | Max: 2,791,908 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     2 | 14,463,769,872
+2       | national_rail_hub              | T0_MEGA_HUB     |     6 | 2,473,614,907
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    72 | 1,167,047,033
+4       | national_stadium               | T1_NATIONAL_MAGNET |    34 | 251,716,688
+5       | hospital_clinical              | T1_NATIONAL_MAGNET |    75 | 241,643,681
+6       | exhibition_centre              | T1_NATIONAL_MAGNET |     3 | 172,631,244
+7       | university_campus              | T1_NATIONAL_MAGNET |   234 | 146,231,288
+8       | shopping_mall                  | T2_STRATEGIC_HUB |   175 | 19,687,238
+9       | industrial_zone                | T2_STRATEGIC_HUB |  5110 | 18,167,421
+10      | commercial_zone                | T2_STRATEGIC_HUB |  3923 | 17,680,511
+11      | student_dormitory              | T2_STRATEGIC_HUB |    17 | 13,806,999
+12      | supermarket                    | T2_STRATEGIC_HUB |   912 | 11,161,294
+13      | government_central             | T2_STRATEGIC_HUB |   678 | 10,638,291
+14      | business_office                | T2_STRATEGIC_HUB |  1309 | 8,486,848
+15      | logistics_hub                  | T2_STRATEGIC_HUB |    19 | 8,379,095
+16      | marketplace                    | T3_LOCAL_CORE   |   113 | 1,911,857
+17      | education_high_school          | T3_LOCAL_CORE   |  1304 | 1,614,495
+18      | social_support_mops            | T3_LOCAL_CORE   |   282 | 1,404,046
+19      | sports_centre                  | T3_LOCAL_CORE   |   843 | 1,324,429
+20      | culture_theatre                | T3_LOCAL_CORE   |   490 | 862,766
+
+==========================================================================================
+ MIASTO: WROCLAW
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 938,629 osób
+[RCN] Liczba transakcji: 14068 | Mediana: 10,152 PLN | Max: 309,574 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | international_airport          | T0_MEGA_HUB     |     1 | 12,724,069,628
+2       | national_rail_hub              | T0_MEGA_HUB     |     9 | 2,178,704,586
+3       | regional_rail_hub              | T1_NATIONAL_MAGNET |    18 | 1,071,449,323
+4       | hospital_clinical              | T1_NATIONAL_MAGNET |    19 | 233,618,137
+5       | national_stadium               | T1_NATIONAL_MAGNET |    11 | 231,429,931
+6       | university_campus              | T1_NATIONAL_MAGNET |   235 | 103,340,496
+7       | student_dormitory              | T2_STRATEGIC_HUB |     1 | 22,130,205
+8       | shopping_mall                  | T2_STRATEGIC_HUB |    42 | 17,387,553
+9       | industrial_zone                | T2_STRATEGIC_HUB |  1265 | 16,849,902
+10      | commercial_zone                | T2_STRATEGIC_HUB |  1102 | 16,602,970
+11      | supermarket                    | T2_STRATEGIC_HUB |   306 | 10,405,804
+12      | government_central             | T2_STRATEGIC_HUB |   218 | 8,001,403
+13      | business_office                | T2_STRATEGIC_HUB |   430 | 7,477,998
+14      | logistics_hub                  | T2_STRATEGIC_HUB |     3 | 7,451,608
+15      | marketplace                    | T3_LOCAL_CORE   |    21 | 1,605,445
+16      | education_high_school          | T3_LOCAL_CORE   |   475 | 1,341,509
+17      | social_support_mops            | T3_LOCAL_CORE   |    71 | 1,165,444
+18      | sports_centre                  | T3_LOCAL_CORE   |   227 | 1,162,913
+19      | culture_theatre                | T3_LOCAL_CORE   |   113 | 802,185
+20      | health_clinic                  | T3_LOCAL_CORE   |   568 | 735,737
+
+==========================================================================================
+ MIASTO: ZIELONA-GORA
+==========================================================================================
+[POPULACJA] Całkowita w strefach: 141,680 osób
+[RCN] Liczba transakcji: 2758 | Mediana: 6,787 PLN | Max: 6,064,825 PLN
+[POI DNA] Top 20 kategorii (według wagi istotności):
+Pozycja | Kategoria OSM                  | Tier            | Ilość | Wartość Jedn.
+--------------------------------------------------------------------------------
+1       | national_rail_hub              | T0_MEGA_HUB     |     1 | 1,887,670,482
+2       | hospital_clinical              | T1_NATIONAL_MAGNET |     2 | 211,699,897
+3       | national_stadium               | T1_NATIONAL_MAGNET |     4 | 187,984,119
+4       | university_campus              | T1_NATIONAL_MAGNET |    14 | 161,522,961
+5       | industrial_zone                | T2_STRATEGIC_HUB |   105 | 17,330,531
+6       | commercial_zone                | T2_STRATEGIC_HUB |    65 | 16,639,608
+7       | shopping_mall                  | T2_STRATEGIC_HUB |    27 | 14,076,610
+8       | supermarket                    | T2_STRATEGIC_HUB |    67 | 10,081,031
+9       | government_central             | T2_STRATEGIC_HUB |    60 | 9,182,130
+10      | business_office                | T2_STRATEGIC_HUB |    69 | 7,991,517
+11      | education_high_school          | T3_LOCAL_CORE   |    43 | 1,725,959
+12      | sports_centre                  | T3_LOCAL_CORE   |    89 | 905,807
+13      | social_support_mops            | T3_LOCAL_CORE   |    14 | 900,227
+14      | culture_theatre                | T3_LOCAL_CORE   |    27 | 822,599
+15      | health_clinic                  | T3_LOCAL_CORE   |    57 | 738,546
+16      | police_station                 | T4_DAILY_SERVICE |     5 | 127,944
+17      | education_preschool            | T4_DAILY_SERVICE |    45 | 118,990
+18      | park_recreation                | T4_DAILY_SERVICE |    92 | 112,382
+19      | place_of_worship               | T4_DAILY_SERVICE |    40 | 97,624
+20      | car_services                   | T4_DAILY_SERVICE |    75 | 79,613
+
+
+==========================================================================================
+GLOBAL SUMMARY - 20260321_0108
+==========================================================================================
+Total Population Covered: 16,867,234
+Total RCN Transactions:   240,807
+Report saved to: reports/DNA_AUDIT_20260321_0108.txt

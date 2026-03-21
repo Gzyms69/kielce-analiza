@@ -12,8 +12,6 @@ def get_allowed_cities():
         return [c.strip() for c in cities_env.split(',')]
     return None
 
-# POPRAWKA P2-7: Przeniesione z poziomu modulu do wnetrza funkcji
-
 def identify_targets():
     print("=== IDENTYFIKACJA POWIATÓW DLA RCN (Spatial Join) ===")
     POWIATY_PATH = get_data_dir() / "poland" / "admin" / "powiaty.json"
@@ -54,9 +52,28 @@ def identify_targets():
             # Używamy unary_union dla pewności, że sprawdzamy cały obszar
             intersecting = powiaty[powiaty.intersects(zone.union_all())]
             
-            # Wyciągamy kody TERYT (zakładamy standardową nazwę kolumny JPT_KOD_JE)
-            # Jeśli kolumna nazywa się inaczej, skrypt spróbuje ją znaleźć
-            teryt_col = 'JPT_KOD_JE' if 'JPT_KOD_JE' in intersecting.columns else intersecting.columns[0]
+            # Wyciagamy kody TERYT - szukamy kolumny zawierajacej kody administracyjne
+            teryt_col = None
+            teryt_candidates = ['JPT_KOD_JE', 'jpt_kod_je', 'TERYT', 'teryt', 'KOD_TERYT', 'kod']
+            for candidate in teryt_candidates:
+                if candidate in intersecting.columns:
+                    teryt_col = candidate
+                    break
+            
+            if teryt_col is None:
+                # Heurystyka: szukaj kolumny z 4-cyfrowymi kodami
+                for col in intersecting.columns:
+                    if col == 'geometry':
+                        continue
+                    sample_vals = intersecting[col].dropna().head(5).astype(str)
+                    if len(sample_vals) > 0 and sample_vals.str.match(r'^\d{4}$').all():
+                        teryt_col = col
+                        break
+            
+            if teryt_col is None:
+                print(f"[CRITICAL] {city_name}: Nie znaleziono kolumny TERYT! Kolumny: {intersecting.columns.tolist()}")
+                continue
+            
             teryt_list = sorted(intersecting[teryt_col].tolist())
             
             # Zapisujemy listę do pliku JSON w folderze miasta

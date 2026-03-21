@@ -7,7 +7,8 @@ import warnings
 import argparse
 import json
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", message=".*Geometry is in a geographic CRS.*")
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))

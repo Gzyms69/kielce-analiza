@@ -220,3 +220,12 @@ Ten dokument zawiera szczegółowy zapis kroków podjętych w projekcie, wraz z 
 
 
 
+
+## Faza 15: Obliczanie Stop DNA (v8.6)
+
+### 36. Projektowanie Wielowymiarowego DNA Przystanków
+- **Działanie:** Opracowanie modelu 4 filarów: Infra Gravity, Market DNA, Transit Pulse, Human Density.
+- **Decyzja:** Rozszerzenie bazy RCN do 2020 roku, aby umożliwić analizę płynności i gentryfikacji.
+- **Rygor:** Wdrożenie Spatial Fallback (500m -> 1500m) oraz Areal Interpolation dla siatki GUS.
+- **Technikalia:** Obsługa błędów czasu GTFS (>24:00) oraz normalizacja logarytmiczna wyników.
+- **Metryki:** Wprowadzenie National Percentile i Local Percentile dla pełnej porównywalności miast.

@@ -18,7 +18,8 @@ def get_allowed_cities():
     return None
 
 def get_worker_limit():
-    return int(os.environ.get("PIPELINE_WORKERS", 2))
+    # KRYTYCZNA POPRAWKA: Wymuszamy 2 wątki dla Osmium (kompromis RAM/Szybkość).
+    return 2
 
 def run_osmium_and_ogr(city_name, data_dir, pbf_source, force):
     """Wykonuje precyzyjne cięcie i konwersję (Twoja oryginalna metoda Turbo)."""
@@ -59,7 +60,10 @@ def run_osmium_and_ogr(city_name, data_dir, pbf_source, force):
             "--config", "OSM_USE_CUSTOM_INDEXING", "NO"
         ], check=True, capture_output=True, text=True)
         if result.stderr:
-            print(f"[{city_name}] OGR2OGR stderr: {result.stderr.strip()}", flush=True)
+            err_text = result.stderr.strip()
+            # OGR2OGR spamuje milionami linijek warningów z OSM o otwartych poligonach
+            if "Non closed ring detected" not in err_text:
+                print(f"[{city_name}] OGR2OGR stderr: {err_text}", flush=True)
         
         # --- AUDYT DANYCH ---
         pts = gpd.read_file(output_gpkg, layer="points")

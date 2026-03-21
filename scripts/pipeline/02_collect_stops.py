@@ -11,7 +11,8 @@ import warnings
 from shapely.ops import unary_union
 from shapely.geometry import box, Point
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", message=".*Geometry is in a geographic CRS.*")
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
@@ -143,10 +144,13 @@ def process_city(city_name, global_rail_gdf):
         (final_city_stops.geometry.y - final_median_y)**2
     )**0.5
     
-    # MAD (Median Absolute Deviation) z mnoznikiem 6 sigma
-    mad = final_city_stops['final_dist'].median()
+    # MAD (Median Absolute Deviation) — poprawna implementacja
+    # MAD = median(|X_i - median(X)|), NIE median(X)
+    median_dist = final_city_stops['final_dist'].median()
+    deviations = (final_city_stops['final_dist'] - median_dist).abs()
+    mad = deviations.median()
     if mad > 0:
-        cutoff = mad * 6  # ~99.7% normalnych odleglosci
+        cutoff = median_dist + mad * 6  # 6 sigma od mediany
     else:
         cutoff = 150000  # Fallback na 150km
     cutoff = min(cutoff, 150000)  # Hard cap 150km

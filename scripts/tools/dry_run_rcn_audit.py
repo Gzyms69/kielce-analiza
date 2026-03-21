@@ -1,84 +1,78 @@
 import geopandas as gpd
 import pandas as pd
-import json
 from pathlib import Path
+import os
+import warnings
 
-def dry_run_rcn_targets():
-    print("=== WERYFIKACJA 'DRY RUN': POKRYCIE RCN (TERYT) ===\n")
-    
-    test_cities_root = Path("test-pipeline/cities")
-    original_cities_root = Path("data/cities")
-    powiaty_path = Path("test-pipeline/poland/admin/powiaty.json")
-    
-    if not powiaty_path.exists():
-        print(f"BŁĄD: Brak pliku powiatów: {powiaty_path}")
-        return
-        
-    powiaty = gpd.read_file(powiaty_path).to_crs("EPSG:2180")
-    
-    print(f"{'MIASTO':15} | {'NOWE TERYT (Z symulacji poligonu)':35} | {'STARE TERYT (Root)':35} | {'RÓŻNICA'}")
-    print("-" * 105)
-    
-    all_targets = set()
-    total_old = 0
-    total_new = 0
+warnings.filterwarnings('ignore')
 
-    for city_dir in sorted(test_cities_root.iterdir()):
-        if not city_dir.is_dir(): continue
-        city = city_dir.name
+def audit_rcn_data():
+    print("=== DEEP AUDIT OF RCN DATA (POST-HARVEST) ===")
+    data_dir = Path("data/cities")
+    
+    cities = sorted([d.name for d in data_dir.iterdir() if d.is_dir() and d.name != 'rail' and (data_dir / d.name / '02_spatial' / 'transactions.gpkg').exists()])
+    
+    report = []
+    
+    for city in cities:
+        gpkg_path = data_dir / city / "02_spatial" / "transactions.gpkg"
         
-        zone_path = city_dir / "transport_zone.gpkg"
-        
-        # 1. Symulacja Nowych TERYT
-        new_teryt_list = []
-        if zone_path.exists():
-            try:
-                zone = gpd.read_file(zone_path).to_crs("EPSG:2180")
-                intersecting = powiaty[powiaty.intersects(zone.union_all())]
-                teryt_col = 'JPT_KOD_JE' if 'JPT_KOD_JE' in intersecting.columns else intersecting.columns[0]
-                new_teryt_list = sorted(intersecting[teryt_col].tolist())
-                all_targets.update(new_teryt_list)
-            except Exception as e:
-                new_teryt_list = [f"ERR: {e}"]
-        else:
-            new_teryt_list = ["BRAK STREFY"]
-
-        # 2. Pobranie Starych TERYT z Root
-        old_teryt_list = []
-        old_target_file = original_cities_root / city / "rcn_targets.json"
-        if old_target_file.exists():
-            try:
-                with open(old_target_file, "r") as f:
-                    old_teryt_list = sorted(json.load(f))
-            except:
-                pass
-                
-        # 3. Porównanie
-        total_new += len(new_teryt_list) if "ERR" not in str(new_teryt_list) and "BRAK" not in str(new_teryt_list) else 0
-        total_old += len(old_teryt_list)
-        
-        new_str = ",".join(new_teryt_list)
-        old_str = ",".join(old_teryt_list)
-        
-        diff = ""
-        if new_str == old_str:
-            diff = "IDENTYCZNE"
-        else:
-            added = set(new_teryt_list) - set(old_teryt_list)
-            removed = set(old_teryt_list) - set(new_teryt_list)
-            if added: diff += f"+{','.join(added)} "
-            if removed: diff += f"-{','.join(removed)}"
+        try:
+            df = gpd.read_file(gpkg_path)
             
-        print(f"{city[:14]:15} | {new_str[:35]:35} | {old_str[:35]:35} | {diff}")
-
-    print("-" * 105)
-    print(f"PODSUMOWANIE:")
-    print(f"Suma przypisań miasto-powiat w Starym Systemie: {total_old}")
-    print(f"Suma przypisań miasto-powiat w Nowym Systemie: {total_new}")
-    print(f"Łączna unikalna liczba TERYT (powiatów) do pobrania z Geoportalu: {len(all_targets)}")
-    
-    # Próbka TERYTów, by sprawdzić czy nie ma śmieci (np. cała Polska)
-    print(f"\nLista unikalnych TERYT do pobrania:\n{sorted(list(all_targets))}")
+            if df.empty:
+                report.append({"city": city, "status": "EMPTY", "count": 0, "min_date": "N/A", "max_date": "N/A", "null_price": "N/A", "null_area": "N/A", "avg_price_m2": "N/A"})
+                continue
+            
+            # Check dates (FIX: mixed timezones)
+            if 'dok_data' in df.columns:
+                df['dok_data'] = pd.to_datetime(df['dok_data'], errors='coerce', utc=True)
+                min_date = df['dok_data'].min().strftime('%Y-%m-%d') if not df['dok_data'].isna().all() else "N/A"
+                max_date = df['dok_data'].max().strftime('%Y-%m-%d') if not df['dok_data'].isna().all() else "N/A"
+            else:
+                min_date = "NO_COL"
+                max_date = "NO_COL"
+                
+            # Check prices and areas
+            null_price = 0
+            null_area = 0
+            avg_price_m2 = 0
+            
+            if 'tran_cena_brutto' in df.columns:
+                # Oczyszczanie tekstu z formatowania w GML jesli to string
+                if df['tran_cena_brutto'].dtype == 'object':
+                     df['tran_cena_brutto'] = df['tran_cena_brutto'].str.replace(' ', '').str.replace(',', '.')
+                df['tran_cena_brutto'] = pd.to_numeric(df['tran_cena_brutto'], errors='coerce')
+                null_price = df['tran_cena_brutto'].isna().sum()
+                
+            if 'lok_pow_uzyt' in df.columns:
+                if df['lok_pow_uzyt'].dtype == 'object':
+                     df['lok_pow_uzyt'] = df['lok_pow_uzyt'].str.replace(' ', '').str.replace(',', '.')
+                df['lok_pow_uzyt'] = pd.to_numeric(df['lok_pow_uzyt'], errors='coerce')
+                null_area = df['lok_pow_uzyt'].isna().sum()
+                
+            if 'tran_cena_brutto' in df.columns and 'lok_pow_uzyt' in df.columns:
+                df['price_m2_raw'] = df['tran_cena_brutto'] / df['lok_pow_uzyt']
+                valid_prices = df[(df['price_m2_raw'] > 0) & (df['price_m2_raw'] < 100000)]['price_m2_raw']
+                if not valid_prices.empty:
+                    avg_price_m2 = valid_prices.mean()
+                    
+            report.append({
+                "city": city,
+                "status": "OK",
+                "count": len(df),
+                "min_date": min_date,
+                "max_date": max_date,
+                "null_price": null_price,
+                "null_area": null_area,
+                "avg_price_m2": f"{avg_price_m2:.0f}"
+            })
+            
+        except Exception as e:
+            report.append({"city": city, "status": f"ERR: {str(e)[:20]}", "count": 0, "min_date": "N/A", "max_date": "N/A", "null_price": "N/A", "null_area": "N/A", "avg_price_m2": "N/A"})
+            
+    df_report = pd.DataFrame(report)
+    print("\n" + df_report.to_string(index=False))
 
 if __name__ == "__main__":
-    dry_run_rcn_targets()
+    audit_rcn_data()

@@ -4,6 +4,7 @@ from pathlib import Path
 import os
 import argparse
 import json
+import tempfile
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
@@ -48,6 +49,8 @@ def permanent_unify_city(city_name, data_dir):
         
         avg_price = 0
         median_price = 0
+        min_allowed = 0
+        max_allowed = 0
         
         if not valid_prices.empty:
             # 1. Obliczamy twardą medianę z całości
@@ -63,7 +66,16 @@ def permanent_unify_city(city_name, data_dir):
             trimmed_prices = valid_prices[(valid_prices >= min_allowed) & (valid_prices <= max_allowed)]
             avg_price = trimmed_prices.mean()
         
-        rcn.to_file(rcn_path, driver="GPKG", layer="transactions")
+        # ATOMIC WRITE: Zapis do pliku tymczasowego, potem atomowy rename
+        tmp_fd, tmp_path = tempfile.mkstemp(suffix='.gpkg', dir=rcn_path.parent)
+        os.close(tmp_fd)
+        try:
+            rcn.to_file(tmp_path, driver="GPKG", layer="transactions")
+            os.replace(tmp_path, rcn_path)
+        except Exception:
+            if os.path.exists(tmp_path):
+                os.unlink(tmp_path)
+            raise
         
         # POPRAWKA P2-3: Zapis zagregowanych statystyk do osobnego pliku
         stats_path = rcn_path.parent / "rcn_stats.json"

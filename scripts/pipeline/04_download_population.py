@@ -32,8 +32,14 @@ def download_population():
         r = requests.get(DIRECT_DATA_URL, verify=False, stream=True, timeout=600)
         r.raise_for_status()
         
+        print("Pobieranie na dysk (streaming)...")
+        tmp_zip = dest_dir / "__nsp_download.zip"
+        with open(tmp_zip, "wb") as f:
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+        
         print("Rozpakowywanie...")
-        with zipfile.ZipFile(io.BytesIO(r.content)) as z:
+        with zipfile.ZipFile(tmp_zip) as z:
             # Szukamy głównego pliku GPKG wewnątrz ZIP
             gpkg_names = [n for n in z.namelist() if n.endswith('.gpkg')]
             if gpkg_names:
@@ -48,8 +54,12 @@ def download_population():
                 
                 print(f"SUKCES! Siatka populacji zapisana w: {target_path}")
             else:
-                print("BŁĄD: Nie znaleziono pliku .gpkg wewnątrz pobranej paczki ZIP.", file=sys.stderr)
+                print(f"BŁĄD: Nie znaleziono pliku .gpkg wewnątrz pobranej paczki ZIP.", file=sys.stderr)
                 sys.exit(1)
+        
+        # Usun plik tymczasowy
+        if tmp_zip.exists():
+            tmp_zip.unlink()
 
     except Exception as e:
         print(f"BŁĄD KRYTYCZNY podczas pobierania populacji: {e}", file=sys.stderr)

@@ -8,7 +8,8 @@ import os
 import re
 import argparse
 
-warnings.filterwarnings("ignore")
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", message=".*Geometry is in a geographic CRS.*")
 
 def get_data_dir():
     return Path(os.environ.get("PIPELINE_DATA_DIR", "data"))
@@ -19,8 +20,8 @@ TIER_VALUES = {
     "T1_NATIONAL_MAGNET": 10000000.0, # Hospital, University, Stadium
     "T2_STRATEGIC_HUB":   1000000.0,  # Mall, Office, Industrial, Commercial, Gov
     "T3_LOCAL_CORE":      100000.0,   # High School, Culture, Marketplace, Sport
-    "T4_DAILY_SERVICE":   10000.0,    # Pharmacy, Bank, Post, Convenience, Kindergarten (SPADEK)
-    "T5_SPEC_GASTRO":     1000.0,     # Restaurant, Local Airfield (SPADEK)
+    "T4_DAILY_SERVICE":   10000.0,    # Pharmacy, Bank, Post, Convenience, Kindergarten
+    "T5_SPEC_GASTRO":     1000.0,     # Restaurant, Local Airfield
     "T6_MICRO_INFRA":     10.0        # ATM, Locker
 }
 
@@ -88,7 +89,7 @@ TAG_WHITELIST = {
     "furniture":        ("specialized_retail", "T4_DAILY_SERVICE"),
     "electronics":      ("specialized_retail", "T4_DAILY_SERVICE"),
     "fuel":             ("car_services", "T4_DAILY_SERVICE"),
-    "car_repair":       ("car_services", "T4_DAILY_SERVICE"),
+    # car_repair usunięty na prośbę użytkownika - zbyt duży szum osiedlowy
 
     # T5 - SPECIALIZED / LOW IMPACT
     "restaurant": ("gastronomy", "T5_SPEC_GASTRO"),
@@ -147,20 +148,28 @@ def process_city(city_name, data_dir):
         pop = gpd.read_file(pop_path)
         h_grav = math.log10(pop["TOT"].sum()) if not pop.empty and pop["TOT"].sum() > 0 else 1.0
         
-        objs = []
+        # Wektoryzacja
+        all_gdf = []
         for layer in ["points", "multipolygons"]:
             gdf = gpd.read_file(infra_path, layer=layer)
             gdf['area_m2'] = gdf.to_crs("EPSG:2180").area if layer == "multipolygons" else 0
-            for _, row in gdf.iterrows():
-                cat_name, tier = identify_v7_9_tag(row, city_name)
-                if cat_name:
-                    base_val = TIER_VALUES[tier]
-                    d_mult = 1.0
-                    if "rail" in cat_name or "airport" in cat_name: d_mult = 15.0
-                    
-                    area_factor = 1.0 + math.log10((row['area_m2'] / 100.0) + 1) if row['area_m2'] > 0 else 1.0
-                    objs.append({"cat": cat_name, "tier": tier, "val": base_val * h_grav * area_factor * d_mult})
+            all_gdf.append(gdf)
+        gdf = pd.concat(all_gdf, ignore_index=True)
         
+        tag_results = gdf.apply(lambda row: identify_v7_9_tag(row, city_name), axis=1, result_type='expand')
+        tag_results.columns = ['cat_name', 'tier']
+        gdf = pd.concat([gdf, tag_results], axis=1)
+        gdf = gdf[gdf['cat_name'].notna()]
+        
+        if gdf.empty: return False
+        
+        # Wektorowe obliczenie wartosci
+        gdf['base_val'] = gdf['tier'].map(TIER_VALUES)
+        gdf['d_mult'] = gdf['cat_name'].apply(lambda c: 15.0 if ("rail" in c or "airport" in c) else 1.0)
+        gdf['area_factor'] = gdf['area_m2'].apply(lambda a: 1.0 + math.log10((a / 100.0) + 1) if a > 0 else 1.0)
+        gdf['val'] = gdf['base_val'] * h_grav * gdf['area_factor'] * gdf['d_mult']
+        
+        objs = gdf[['cat_name', 'tier', 'val']].rename(columns={'cat_name': 'cat'}).to_dict('records')
         if not objs: return False
             
         df = pd.DataFrame(objs)

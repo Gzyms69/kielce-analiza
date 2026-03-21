@@ -1,8 +1,8 @@
-pandas
-geopandas
-shapely
-fiona
-pyproj
+pandas>=2.0
+geopandas>=1.0
+shapely>=2.0
+fiona>=1.9
+pyproj>=3.5
 jupyter
 matplotlib
 gtfs-kit
@@ -10,3 +10,6 @@ openpyxl
 rtree
 pyogrio
 requests
+h3>=4.0
+lxml
+urllib3
